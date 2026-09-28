@@ -1,0 +1,367 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}</style><style>:root{color-scheme:light dark;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}}:root[data-theme="dark"]{color-scheme:dark;--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}:root[data-theme="light"]{color-scheme:light}@media print{:root,:root[data-theme="dark"]{color-scheme:light;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}}body{background:var(--md-bg);color:var(--md-text);max-width:720px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:10px;font:14px/1.55 -apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',sans-serif;overflow-wrap:break-word}body>:first-child{margin-top:0}h1,h2,h3,h4,h5,h6{margin:6px 0 0;line-height:1.25;font-weight:600;text-wrap:balance}h1{font-size:1.35em}h2{font-size:1.15em;color:var(--md-muted)}h3,h4,h5,h6{font-size:1em}p,ul,ol,blockquote,table,pre,hr{margin:0}strong{font-weight:600}a{color:var(--md-link);text-decoration:none}a:hover{text-decoration:underline}ul,ol{display:flex;flex-direction:column;gap:6px;padding-left:22px}ul{list-style:disc}ol{list-style:decimal}:is(li,td,th)>*+:is(p,ul,ol,blockquote){margin-top:6px}blockquote{display:flex;flex-direction:column;gap:10px;border-left:2px solid var(--md-rule);padding-left:10px;color:var(--md-muted)}:not(pre)>code{background:var(--md-fill);padding:1px 3px;border-radius:4px;font:.92em 'SF Mono',ui-monospace,Menlo,Consolas,monospace}a>code{background:none;color:inherit}pre{background:var(--md-fill);padding:10px 12px;border-radius:6px;overflow-x:auto;font:12px/1.5 'SF Mono',ui-monospace,Menlo,Consolas,monospace;margin-block:4px}pre code{background:none;padding:0;font:inherit}table{width:100%;border-collapse:separate;border-spacing:2px;font:inherit}th,td{padding:6px 8px;border-radius:3px;text-align:left;vertical-align:top}th{background:var(--md-fill-strong);font-weight:600}td{background:var(--md-fill)}:is(th,td) :not(pre)>code{background:transparent}hr{border:0;border-top:1px solid var(--md-rule-strong);margin-block:10px}img{max-width:100%;height:auto;border-radius:4px}</style>
+</head><body>
+<h1>LE 409 — Tannery Wastewater Management</h1>
+<h2>Exam Prep: Secondary (Biological) Treatment</h2>
+<p><em>Based on &quot;LE 409 Slides 13.08.26.pdf&quot; (p.17–end), cross-referenced with Chapter 1 (Primary Treatment) and Chapter 2 (Secondary/Physicochemical Treatment), in the style of Jawad Sir's in-course broad questions.</em></p>
+<blockquote>
+<p><strong>Note on terminology:</strong> The slide deck calls this material &quot;Secondary Treatment,&quot; meaning <em>biological</em> treatment (activated sludge, biofilms, ponds, anaerobic digestion). Chapter 2 of your study material uses &quot;Secondary Treatment&quot; for a <em>different</em> thing — physicochemical/advanced polishing (filtration, adsorption, ion exchange, membranes). Don't mix them up on the exam: if a question is clearly about microbes/BOD removal, it's the slides' sense; if it's about adsorption/ion exchange/membranes, it's Chapter 2's sense. This guide focuses on the slides' (biological) content, pulling in Chapter 1 wherever primary treatment protects or feeds the biological stage, and noting Chapter 2 only where the terminology or downstream polishing is relevant.</p>
+</blockquote>
+<hr>
+<h2>Part A — Foundations of Biological Treatment</h2>
+<h3>Q1. What is secondary (biological) treatment, and why can primary treatment not do this job? (4 marks)</h3>
+<p>Primary treatment is physical/chemical: it screens, settles and floats out coarse, heavy and floating material, and it neutralises or destroys chemical hazards (sulphide, chromium). None of that touches pollution that is <strong>dissolved</strong> — and in tannery effluent, most of the BOD/COD after primary treatment is dissolved organic matter that cannot be filtered or settled out.</p>
+<p>Secondary (biological) treatment closes that gap: it uses micro-organisms to consume the dissolved and colloidal biodegradable organic matter, converting it into new microbial biomass, CO₂, water, and (anaerobically) biogas. The goal is to bring BOD down to within discharge limits (≤ 50 mg/L under ECR 2023) by growing microbes on the pollution and then removing that microbial mass as sludge — in effect, the pollution &quot;leaves&quot; the water as settled biomass. This only works if the load is biodegradable and non-toxic, which is exactly what Chapter 1's primary treatment (sulphide oxidation, chrome recovery, neutralisation) was responsible for guaranteeing.</p>
+<h3>Q2. Describe the role of the different micro-organism groups in a biological treatment system. (3 marks)</h3>
+<ul>
+<li><strong>Bacteria</strong> are the workhorses — they oxidise the dissolved organic matter for energy and growth; this is where the actual BOD removal happens.</li>
+<li><strong>Protozoa and rotifers</strong> graze on free (dispersed) bacteria, which polishes the effluent and improves its clarity — a floc without protozoa tends to look turbid.</li>
+<li><strong>Fungi and algae</strong> appear in specific conditions: fungi favour low pH/low nitrogen environments (and can cause bulking if they dominate), while algae are important in pond systems, where they photosynthesise and supply oxygen to the bacteria.
+Together they form a self-regulating microbial community; a healthy, diverse biomass (assessed by microscope) is itself an indicator of a well-run plant. The overall reaction is: organic matter + O₂ + microbes → new microbes + CO₂ + H₂O + energy.</li>
+</ul>
+<h3>Q3. Distinguish between aerobic and anaerobic biological treatment. (4 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Aerobic</th>
+<th>Anaerobic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>End products</td>
+<td>CO₂ + H₂O + a large amount of new biomass</td>
+<td>Biogas (CH₄ + CO₂) + very little biomass</td>
+</tr>
+<tr>
+<td>Best suited to</td>
+<td>Medium-strength effluent</td>
+<td>High-strength effluent (high BOD/COD, e.g. &gt; 1,500–2,000 mg/L COD)</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>Consumes energy (aeration)</td>
+<td>Produces energy (methane can be burned)</td>
+</tr>
+<tr>
+<td>Sludge produced</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Fast</td>
+<td>Slower, needs a longer retention time</td>
+</tr>
+<tr>
+<td>Odour/other issues</td>
+<td>Low odour</td>
+<td>H₂S odour; methanogens sensitive to toxins and salinity</td>
+</tr>
+<tr>
+<td>Example units</td>
+<td>Activated sludge, trickling filter</td>
+<td>UASB, anaerobic digester/pond</td>
+</tr>
+</tbody>
+</table>
+<p>For tannery effluent specifically, the choice is driven mainly by strength: high-COD beamhouse/composite streams are economical to treat anaerobically first (recovering biogas), but sulphide must be oxidised upstream (Chapter 1) because it is directly toxic to methanogens, and high TDS/salinity also inhibits anaerobic biomass.</p>
+<h3>Q4. Explain the difference between suspended-growth and attached-growth biological systems, and discuss why a plant designer might choose one over the other. (5 marks)</h3>
+<p><em>(This mirrors Jawad Sir's own in-course Q5 — expect something almost identical.)</em></p>
+<ul>
+<li><strong>Suspended growth</strong> — microbes float freely as flocs in the &quot;mixed liquor&quot; inside an aeration tank; water and biomass are mixed together, then separated afterward by settling in a clarifier. Example: the activated sludge process (ASP) and its variants.</li>
+<li><strong>Attached growth (biofilm)</strong> — microbes grow as a slimy film (held together by extracellular polymeric substances, EPS) fixed to a solid surface (rock, plastic media, rotating discs, moving carriers); the wastewater flows past the fixed film and the pollution diffuses into it. Examples: trickling filter, RBC, MBBR.</li>
+<li><strong>Hybrid systems</strong> (IFAS, MBBR-in-activated-sludge) combine both in one tank for extra capacity without new civil works.</li>
+</ul>
+<p><strong>Why a designer would choose one over the other:</strong></p>
+<ul>
+<li>Suspended-growth (ASP) systems are <strong>compact and flexible</strong> — many operating &quot;dials&quot; (F/M, SRT, MLSS) give tight control and excellent effluent quality, but they need <strong>high operator skill</strong>, are vulnerable to bulking, and biomass can be washed out or poisoned by a toxic shock because it is fully exposed in the mixed liquor.</li>
+<li>Attached-growth systems are <strong>more robust and tolerant of shocks</strong> (the biofilm's protected inner layers survive what would kill suspended sludge), need <strong>less operator skill</strong>, have essentially no bulking risk, and biomass cannot wash out — but they offer less fine control, and classical designs (trickling filters) need more land.</li>
+<li>For tannery effluent in particular — variable, sometimes toxic, and often run by less-specialised operating staff — attached-growth or hybrid systems (MBBR/IFAS) or extended aeration (a low-F/M variant of ASP) are frequently favoured because they are &quot;forgiving,&quot; even though compact conventional ASP may look more efficient on paper.</li>
+</ul>
+<h3>Q5. Explain the concepts of substrate utilisation, endogenous respiration, and yield in biological treatment. (3 marks)</h3>
+<p>The organic pollution (BOD) is the microbes' &quot;food,&quot; or substrate. As microbes consume substrate they multiply — biomass rises as BOD falls. When food becomes scarce, microbes enter <strong>endogenous respiration</strong>: they consume their own cell mass for energy, which reduces and stabilises the sludge (this is deliberately exploited in extended aeration). <strong>Yield (Y)</strong> is the mass of new cells produced per unit of substrate consumed; a lower yield means less excess sludge to handle. The <strong>F/M ratio</strong> (food-to-microorganism ratio) is the practical lever operators use to balance feed rate against biomass — it determines whether the microbial population is starving, well-fed, or overwhelmed.</p>
+<hr>
+<h2>Part B — Activated Sludge Process (ASP) and Its Control</h2>
+<h3>Q6. Describe the basic principle of the activated sludge process. Explain the functions of the aeration tank, secondary clarifier, return activated sludge (RAS), and waste activated sludge (WAS). (6 marks)</h3>
+<p><em>(This is essentially Jawad Sir's Q6 verbatim — know this one cold.)</em></p>
+<p><strong>Principle:</strong> Wastewater is mixed with a dense population of micro-organisms (&quot;activated sludge&quot;) inside an aerated tank. The microbes oxidise the dissolved BOD for energy and grow into settleable flocs. The mixture then passes to a settling tank, where the biomass separates from the treated water by gravity. Most of the settled biomass is pumped back to keep the population in the aeration tank high (this recycled, biologically active, &quot;hungry&quot; sludge is why the process is called &quot;activated&quot;), and the small surplus generated by growth is removed to keep the population steady.</p>
+<ul>
+<li><strong>Aeration tank (reactor):</strong> where the actual treatment happens — air (oxygen) is supplied continuously, microbes consume dissolved/colloidal BOD, and biomass grows into flocs. It must also provide enough mixing energy to keep MLSS in suspension even when oxygen demand is low.</li>
+<li><strong>Secondary clarifier:</strong> a quiescent settling tank where the biological flocs separate from the treated water by gravity; the treated (clarified) water overflows to discharge/polishing, while the settled sludge is collected at the bottom.</li>
+<li><strong>Return Activated Sludge (RAS):</strong> the settled biomass pumped back from the clarifier to the aeration tank, to keep the microbial population (MLSS) high and hungry, ensuring continuous treatment capacity.</li>
+<li><strong>Waste Activated Sludge (WAS):</strong> the surplus biomass generated by microbial growth, deliberately wasted (removed from the system) to keep MLSS and sludge age (SRT) at the desired set-point — this single wasting decision is the operator's single most powerful lever on the whole plant, since it controls both MLSS and SRT simultaneously.</li>
+</ul>
+<h3>Q7. What are the five key control parameters of the activated sludge process, and what does each one tell an operator? (5 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+<th>Set by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F/M ratio</td>
+<td>Food (BOD) supplied per unit of microbial mass per day</td>
+<td>MLSS &amp; tank volume</td>
+</tr>
+<tr>
+<td>MLSS/MLVSS</td>
+<td>Size of the microbial population in the aeration tank</td>
+<td>Sludge wasting rate</td>
+</tr>
+<tr>
+<td>SRT (sludge age)</td>
+<td>How long microbes stay in the system</td>
+<td>Sludge wasting rate</td>
+</tr>
+<tr>
+<td>HRT</td>
+<td>How long the <em>water</em> stays in the tank</td>
+<td>Tank volume &amp; flow</td>
+</tr>
+<tr>
+<td>SVI</td>
+<td>How well the sludge settles</td>
+<td>Diagnosed, not directly set</td>
+</tr>
+</tbody>
+</table>
+<p>Plus <strong>DO (dissolved oxygen)</strong>, roughly 2 mg/L, which is what the blower/aerator supplies. The wasting rate (WAS) is the master control, since it sets both MLSS and SRT together.</p>
+<h3>Q8. Explain why SRT is deliberately kept much longer than HRT in the activated sludge process. (4 marks)</h3>
+<p>HRT (Hydraulic Retention Time = tank volume ÷ flow) is the time the <em>water</em> spends in the aeration tank — typically only 4–8 hours for conventional ASP. SRT (Solids/Sludge Retention Time) is the time the <em>microbes</em> spend in the system — typically 5–15 days (up to 20–30 for extended aeration). This large gap is possible only because the secondary clarifier catches the biomass and RAS returns it to the tank, decoupling the fate of the water from the fate of the microbes.</p>
+<p>This decoupling is the central working principle of activated sludge: it allows a large, slow-growing, mature microbial population (which needs days to reproduce) to be retained in a comparatively small tank treating a much larger daily flow. Without sludge return, slow-growing organisms — critically, nitrifying bacteria, which need an SRT of roughly 10 days or more — would simply be washed out of the tank before they could establish, and nitrification (or any biological process needing slow growers) would fail.</p>
+<h3>Q9. What is the Sludge Volume Index (SVI), how is it measured, and why is it important? (4 marks)</h3>
+<p>SVI expresses how well the activated sludge settles. It is measured with the <strong>SV30 test</strong>: fill a 1 L graduated cylinder with mixed liquor from the aeration tank, let it settle for 30 minutes, and read the settled sludge volume (mL/L). Dividing this by the MLSS concentration (mg/L) and scaling gives SVI — the volume in mL occupied by one gram of dry sludge after 30 minutes.</p>
+<ul>
+<li>SVI &lt; 100 mL/g: dense, compact, fast-settling floc — a healthy, well-controlled clarifier.</li>
+<li>SVI 100–150 mL/g: fair.</li>
+<li>SVI &gt; 150 mL/g: light, bulky sludge that settles slowly and can be carried over the clarifier weir into the effluent (sludge bulking).</li>
+</ul>
+<p>SVI matters because excellent biological treatment is worthless if the resulting biomass cannot be settled out afterward — a rising SVI is often the earliest warning sign of an approaching operational failure, well before the lab BOD/COD results would show it. Operators are advised to track SVI (and MLSS, F/M, SRT) as a trend on a weekly chart, since most failures announce themselves gradually.</p>
+<h3>Q10. Discuss sludge bulking: what causes it, what its consequences are, and how it is corrected. (5 marks)</h3>
+<p><strong>What happens:</strong> filamentous bacteria grow out of the floc structure, producing a light, open floc that traps water and will not compact — SVI rises above ~150 mL/g.</p>
+<p><strong>Consequences:</strong> the sludge blanket rises in the clarifier, biomass is carried over the effluent weir, and both effluent TSS and BOD can fail discharge standards; MLSS is progressively lost from the system, undermining treatment capacity.</p>
+<p><strong>Common causes:</strong> low dissolved oxygen; a prolonged low F/M ratio (starvation conditions favour filaments); nutrient deficiency (nitrogen or phosphorus — many industrial effluents, including tannery effluent, need dosing to maintain the BOD:N:P ≈ 100:5:1 rule of thumb); septic influent containing sulphide; and wide swings in organic load.</p>
+<p><strong>Corrective actions, in order:</strong> (1) fix dissolved oxygen first; (2) correct nutrient balance; (3) adjust F/M and SRT back into range; (4) add a selector zone (a small high-F/M zone that favours floc-formers over filaments); and, only as an emergency measure, chlorinate the return sludge. Diagnosis is confirmed earliest by microscopic examination showing filaments bridging between flocs, rather than waiting on SVI trend data alone.</p>
+<h3>Q11. Explain &quot;toxic shock&quot; in the context of tannery activated sludge plants, and how it is prevented. (5 marks)</h3>
+<p>For tannery/industrial effluent, the single biggest operational risk to a biological plant is a poisoned (shocked) biomass. It presents distinctively: dissolved oxygen suddenly <strong>rises</strong> (because the microbes have stopped respiring and are no longer consuming it), effluent BOD climbs, the sludge turns pale and disperses, and under the microscope protozoa appear dead or immobile.</p>
+<p>Common tannery causes include a slug of chrome liquor, a sulphide-bearing lime dump reaching the aeration tank, a solvent/biocide discharge, or a sudden salinity spike — all things a properly segregated and pre-treated primary stage (Chapter 1) is meant to prevent.</p>
+<p><strong>Immediate response:</strong> identify and stop the source of the toxin; dilute the tank; keep aeration running; and, critically, <strong>stop wasting sludge</strong> to preserve whatever biomass has survived. <strong>Recovery</strong> may require reseeding with healthy sludge from another plant and gradual re-acclimatisation, and can take days to weeks.</p>
+<p><strong>Prevention is really a primary-treatment job:</strong> strong equalisation (evening out shock loads), stream segregation (keeping the acidic tanyard stream away from sulphide-bearing beamhouse flows), sulphide oxidation, and chrome recovery upstream, together with influent monitoring — this is exactly why Chapter 1 stresses that &quot;most failures of secondary treatment are in fact failures of primary treatment.&quot;</p>
+<h3>Q12. Describe the routine monitoring programme needed to operate an activated sludge plant reliably. (3 marks)</h3>
+<ul>
+<li><strong>Every shift/daily:</strong> DO in the aeration tank, the SV30 settling test, sludge appearance/colour, clarifier blanket depth, pH and temperature.</li>
+<li><strong>Daily to weekly:</strong> MLSS and MLVSS, influent/effluent BOD and COD, effluent TSS; calculated F/M, SRT and SVI; RAS/WAS flow records.</li>
+<li><strong>Weekly to monthly:</strong> microscopic examination of the sludge, nutrient (N and P) checks, ammonia/nitrate monitoring if nitrifying, sludge production trend.</li>
+</ul>
+<p>The underlying principle is to track the <em>trend</em>, not a single reading — a rising SVI over several days, for example, is an early warning of bulking long before an effluent violation actually occurs.</p>
+<h3>Q13. Describe extended aeration as a process variant, and explain why it is often the preferred choice for tanneries and small industries. (4 marks)</h3>
+<p>Extended aeration is activated sludge deliberately operated at a very low F/M ratio (0.05–0.15) and a very long sludge age (SRT 20–30 days), with correspondingly long HRT (18–36 hours). Because food is scarce relative to the biomass present, endogenous respiration dominates: starved microbes consume their own cell mass, so very little excess sludge is produced, and what remains is well stabilised (low odour, easier to dewater). The large biomass and long retention time make the process very stable, absorbing shock loads and toxic slugs far better than a high-rate conventional plant, and the long sludge age also allows slow-growing nitrifiers to establish, so nitrification effectively comes &quot;for free.&quot; The price is a much larger aeration tank and higher aeration energy per unit of BOD removed — but for tanneries, whose influent is variable and sometimes hostile, robustness and simplicity of operation outweigh that extra energy cost, which is why extended aeration is described as the industrial favourite.</p>
+<h3>Q14. Describe the sequencing batch reactor (SBR) and explain how it is able to remove carbon, nitrogen and phosphorus in a single tank. (4 marks)</h3>
+<p>An SBR performs all the stages of activated sludge — fill, react, settle, decant, idle/waste — in <strong>one tank</strong>, separated in <em>time</em> rather than in space (unlike a conventional plant, where each stage has its own tank). During <strong>Fill</strong>, influent enters onto settled sludge (an unaerated fill creates the anaerobic/anoxic conditions needed for phosphorus and nitrogen removal). During <strong>React</strong>, aeration oxidises BOD and nitrifies ammonia, while switching air on and off within this phase creates alternating aerobic/anoxic conditions in the same tank, allowing denitrification without a separate zone. During <strong>Settle</strong>, aeration and mixing stop completely, so the tank becomes a perfectly still clarifier — often settling better than a continuously-fed clarifier because there is no ongoing inflow disturbance. During <strong>Decant</strong>, a moving weir draws off the clear supernatant while sludge stays behind, and during <strong>Idle/Waste</strong>, surplus sludge is removed and the tank readied for the next cycle (typically 4–8 hours). The main limitation is that SBRs need reliable automation, level control and decanting equipment, and usually run as two or more alternating tanks so that continuous inflow can still be accepted.</p>
+<hr>
+<h2>Part C — Attached-Growth (Biofilm) Systems</h2>
+<h3>Q15. Describe the structure of a biofilm and explain the three mechanisms — diffusion, layered metabolism, and sloughing — that govern how attached-growth systems work. (5 marks)</h3>
+<p>A biofilm is a layer of micro-organisms attached to a solid support, held together in a matrix of extracellular polymeric substances (EPS, the slime the microbes themselves secrete). It typically forms over days as free bacteria attach, multiply and excrete EPS. Because the film does not move to the food, food (BOD) and oxygen must instead <strong>diffuse</strong> into it from the flowing wastewater; this diffusion step, across a thin stagnant liquid layer and then into the film, is often the rate-limiting step in the whole process.</p>
+<p>Inside the film, <strong>layered metabolism</strong> develops: the outer 0.1–0.2 mm is aerobic and does most of the BOD-removal work; deeper layers run out of oxygen and turn anoxic and then anaerobic. As the film thickens, this weak, anaerobic base loses its grip and patches detach and wash away — this natural <strong>sloughing</strong> is the biofilm system's equivalent of sludge wasting; it is self-regulating rather than operator-controlled (compare with activated sludge, where the operator chooses the sludge age by deliberately wasting sludge). Because performance is limited by diffusion depth rather than film thickness, a thicker film does <em>not</em> mean better treatment — what matters is the total surface area available and the hydraulic contact with it. A clarifier is still required downstream, because sloughed biofilm (&quot;humus sludge&quot;) must be settled out of the effluent.</p>
+<h3>Q16. Describe the construction and operation of a trickling filter, and explain the significance of the recirculation ratio. (5 marks)</h3>
+<p>Despite its name, a trickling filter does not filter — it is a fixed-bed biofilm reactor. A circular tank is filled with rock (1–2.5 m deep) or plastic media (towers up to 6–12 m), over which settled wastewater is sprayed evenly by rotating distributor arms. The water trickles down over the biofilm-coated media; as the thin film of liquid passes over the biofilm, BOD diffuses in and is oxidised, and the water emerges progressively cleaner. Air moves naturally through the void spaces, driven by the temperature difference between air and water, so classical designs need no blowers. An underdrain collects the treated water and admits air (it must never run full, or ventilation stops), and the effluent — carrying sloughed biofilm (&quot;humus sludge&quot;) — is settled out in a secondary clarifier.</p>
+<p>The <strong>recirculation ratio</strong> (R = Qr/Q, typically 0.5–3.0) is the ratio of recirculated effluent flow to the raw influent flow. Recirculating some treated effluent back over the filter dilutes a strong influent, keeps the media continuously wet (important since dry patches encourage filter flies), improves the evenness of distribution, and flushes out excess biofilm before it clogs the voids (ponding). Filters are classified by their hydraulic and organic loading rate (low-rate, intermediate, high-rate, super-rate, roughing), and a &quot;roughing filter&quot; is deliberately under-loaded to knock the peak load off a very strong industrial effluent ahead of a further treatment stage.</p>
+<h3>Q17. Describe the construction and operating principle of a Rotating Biological Contactor (RBC), and discuss its main advantages and limitations. (5 marks)</h3>
+<p>An RBC consists of large-diameter (2–3.7 m), closely-spaced plastic discs mounted on a horizontal shaft in a contoured tank, with roughly 40% of each disc submerged at any time. The shaft rotates slowly (1–2 rpm), driven mechanically or by air. As a disc rotates, its submerged half absorbs BOD from the wastewater while its exposed half takes up oxygen from the air — each rotation repeats this feed-then-aerate cycle. Units are usually staged in 3–4 units in series: the first stage carries the heaviest load, while later stages polish the effluent and can even nitrify. The rotation's shear also controls biofilm thickness by shearing off excess film, which is carried to a downstream clarifier.</p>
+<p><strong>Advantages:</strong> very low energy use (no blowers, only a slow drive motor); simple to operate, needing little skilled attention; a compact footprint compared with a trickling filter; short start-up and quick recovery after upsets; no sludge return line and therefore no bulking problems.</p>
+<p><strong>Limitations:</strong> mechanical issues (shaft and bearing failures under heavy biofilm loading); sensitivity to overloading, especially at the lead (first) stage; higher capital cost per unit of capacity; expensive disc/media replacement; usually needs covering against weather, algae and odour; and reduced performance in cold weather.</p>
+<h3>Q18. Describe how MBBR and IFAS work, and explain why IFAS is particularly attractive for upgrading an existing, overloaded tannery treatment plant. (5 marks)</h3>
+<p>A <strong>Moving Bed Biofilm Reactor (MBBR)</strong> fills a tank with small plastic carrier elements (10–25 mm), providing a large protected internal surface area (350–1,200 m²/m³), typically occupying 30–70% of the tank volume. Aeration (or a mixer in anoxic zones) keeps the carriers tumbling so the biofilm on them contacts the wastewater throughout the whole tank; retention screens at the outlet keep the carriers inside the reactor. Because biomass lives on the carriers rather than in suspension, there is no sludge return line and settleability/bulking ceases to be a control concern — though sloughed biofilm still needs downstream separation by a clarifier, DAF or filter.</p>
+<p><strong>IFAS (Integrated Fixed-film Activated Sludge)</strong> takes this a step further by adding carriers directly <em>into</em> an existing activated-sludge aeration tank, so suspended flocs and attached biofilm work side by side in the same volume. Total biomass rises sharply without enlarging the tank, so a plant that is hydraulically or organically overloaded can be uprated with minimal new civil works — often achieving a 50–100% capacity increase within the same footprint. Because slow-growing nitrifiers can live safely on the carriers regardless of the suspended sludge's own age, an existing plant can even be made to nitrify without extending the overall SRT. The clarifier and RAS line are retained, since the suspended fraction still needs to settle and return. This combination of minimal civil work and a large capacity gain is exactly why IFAS is attractive for rescuing an overloaded tannery ASP instead of building new tanks.</p>
+<h3>Q19. Compare suspended growth and attached growth systems across biomass retention, bulking risk, shock tolerance and operator skill. (4 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Suspended growth (ASP)</th>
+<th>Attached growth (biofilm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where biomass lives</td>
+<td>Free-floating flocs in mixed liquor</td>
+<td>Fixed film on media/carriers</td>
+</tr>
+<tr>
+<td>Biomass retention</td>
+<td>By clarifier + RAS return</td>
+<td>Inherent — cannot wash out</td>
+</tr>
+<tr>
+<td>Sludge age control</td>
+<td>Set by operator (wasting rate)</td>
+<td>Self-regulating, by sloughing</td>
+</tr>
+<tr>
+<td>Bulking risk</td>
+<td>Yes — the main failure mode</td>
+<td>Essentially none</td>
+</tr>
+<tr>
+<td>Shock/toxic tolerance</td>
+<td>Lower — biomass fully exposed</td>
+<td>Higher — protected deeper layers survive</td>
+</tr>
+<tr>
+<td>Operator skill needed</td>
+<td>High</td>
+<td>Low to moderate</td>
+</tr>
+<tr>
+<td>Flexibility of control</td>
+<td>High (many operating &quot;dials&quot;)</td>
+<td>Limited</td>
+</tr>
+<tr>
+<td>Footprint</td>
+<td>Compact</td>
+<td>Larger for classical units; compact for MBBR</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Part D — Lagoons, Ponds and Anaerobic Treatment</h2>
+<h3>Q20. Describe the three types of waste stabilisation pond used in series, and explain the function of each. (4 marks)</h3>
+<ul>
+<li><strong>Anaerobic pond:</strong> deep (2–5 m) and heavily loaded so oxygen is entirely absent. Solids settle and digest anaerobically, releasing methane; removes 50–70% of BOD in only 1–5 days. Small area required, but there is odour risk if overloaded or if sulphate content is high.</li>
+<li><strong>Facultative pond:</strong> shallow (1–2 m), with an aerobic upper layer and an anaerobic bottom; algae and bacteria work in partnership (algae photosynthesise oxygen that bacteria use to oxidise BOD). Retention 5–30 days; this is the main BOD-removal stage of the series.</li>
+<li><strong>Maturation pond:</strong> shallow (1–1.5 m), lightly loaded and fully aerobic. Its job is polishing — sunlight and high pH destroy pathogens, and nutrients are further reduced, so this stage protects public health at the point of reuse or discharge.</li>
+</ul>
+<h3>Q21. Describe the working principle of a UASB reactor, and explain the role of granulation and the GLS separator. (5 marks)</h3>
+<p>The Upflow Anaerobic Sludge Blanket (UASB) reactor is the most widely used high-rate anaerobic reactor. Influent is distributed evenly across the tank floor and flows <strong>upward</strong> through a bed of anaerobic sludge at a typical upflow velocity of 0.5–1.5 m/h. Under the right conditions the biomass self-organises into dense <strong>granules</strong> (1–3 mm across) that settle very rapidly (30–80 m/h) — this is what allows a huge mass of active biomass to be retained in a comparatively small reactor volume, without any mechanical separation device. A dense granular bed sits at the bottom, with a looser blanket of granules above it, kept suspended by rising biogas bubbles.</p>
+<p>At the top, the <strong>gas–liquid–solids (GLS) separator</strong> collects biogas in an inverted hood, allows granules that are carried upward to fall back into the reactor, and lets the clarified effluent leave — without this device, granules would simply wash out with the treated water. Typical performance is 70–85% COD removal at organic loadings of 5–15 kg COD/m³·d with an HRT of only 6–12 hours — remarkably compact for the amount of pollution removed. The main practical difficulty is start-up: granule formation can take 2–6 months unless the reactor is seeded with granular sludge from an already-operating UASB.</p>
+<h3>Q22. Discuss biogas — its composition, energy value, and the specific H₂S problem in tannery anaerobic treatment. (5 marks)</h3>
+<p>Biogas is roughly 60–70% methane and 30–40% carbon dioxide, with traces of H₂S, nitrogen and water vapour, giving it a calorific value of about 21–25 MJ/m³ — around 60% that of natural gas. It can be used, in increasing order of complexity, for direct combustion (process heat), in a gas engine/CHP unit (electricity plus heat), or upgraded to biomethane; gas that cannot be used must still be flared, never vented, since methane is a far more potent greenhouse gas than CO₂.</p>
+<p><strong>The H₂S problem is especially severe for tanneries</strong> because tannery effluent is rich in sulphate (from pickling and chrome tanning) and sulphide (from liming). Inside the anaerobic reactor, sulphate-reducing bacteria convert sulphate to sulphide, which partitions into the biogas as H₂S. This causes two kinds of damage: H₂S burns to sulphur dioxide and forms sulphuric acid, corroding engines, boilers, gas lines and concrete; and sulphide is directly toxic to methanogens above roughly 200 mg/L. Sulphate-reducing bacteria also compete with methanogens for the same organic substrate, so a high-sulphate effluent produces <em>less</em> methane per kg of COD removed. H₂S can be removed by iron dosing (precipitating FeS within the reactor), biological scrubbing with a small air dose, activated-carbon or caustic scrubbers, or water scrubbing — but the deeper design implication is that sulphide oxidation and stream segregation in <strong>primary treatment</strong> (Chapter 1) directly protect both the anaerobic reactor's biology and the value of the gas it produces.</p>
+<h3>Q23. Compare anaerobic and aerobic biological treatment, and explain what determines which is chosen for a tannery. (4 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Anaerobic</th>
+<th>Aerobic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy</td>
+<td>Produces (methane)</td>
+<td>Consumes (aeration)</td>
+</tr>
+<tr>
+<td>Sludge yield</td>
+<td>0.05–0.15 kg VSS/kg COD</td>
+<td>0.4–0.6 kg VSS/kg COD</td>
+</tr>
+<tr>
+<td>Nutrient demand (COD:N:P)</td>
+<td>≈ 350:5:1</td>
+<td>≈ 100:5:1</td>
+</tr>
+<tr>
+<td>Best influent strength</td>
+<td>High (&gt; 1,500–2,000 mg/L COD)</td>
+<td>Low to medium</td>
+</tr>
+<tr>
+<td>Effluent quality</td>
+<td>Partial — needs polishing</td>
+<td>Meets discharge standards</td>
+</tr>
+<tr>
+<td>Start-up time</td>
+<td>2–6 months (granulation)</td>
+<td>2–4 weeks</td>
+</tr>
+<tr>
+<td>Temperature sensitivity</td>
+<td>High — needs 30–38 °C</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<p>The main deciding factor is influent strength: above roughly 2,000 mg/L COD, it becomes economical to put an anaerobic stage first (to strip the bulk of the load and recover biogas) before a final aerobic polishing stage, since anaerobic treatment alone cannot meet discharge standards. For tannery effluent specifically, this fits the beamhouse/composite streams' high COD well, but sulphide (toxic to methanogens) must be removed upstream, and high TDS/salinity can rule anaerobic treatment out altogether unless the biomass is carefully acclimatised.</p>
+<hr>
+<h2>Part E — Putting It Together: Tannery-Specific Design</h2>
+<h3>Q24. Discuss the four constraints that make tannery effluent especially challenging for biological treatment, and where in the treatment train each is addressed. (6 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Why it hurts the biology</th>
+<th>Where it is solved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High salinity (TDS)</td>
+<td>Osmotic stress bursts cells; biological treatment cannot remove salt at all</td>
+<td>Acclimatised/halotolerant biomass; salt reduction at source; RO or ZLD in tertiary</td>
+</tr>
+<tr>
+<td>Sulphide</td>
+<td>Toxic to aerobes AND methanogens; exerts oxygen demand; corrodes; forms H₂S gas</td>
+<td>Catalytic oxidation in <strong>primary treatment</strong>, before mixing</td>
+</tr>
+<tr>
+<td>Chromium</td>
+<td>Inhibits biomass; contaminates sludge as hazardous waste</td>
+<td>Segregation and chrome recovery in <strong>primary treatment</strong></td>
+</tr>
+<tr>
+<td>High &amp; variable load</td>
+<td>Shock loads overwhelm or poison the biomass</td>
+<td>Strong equalisation; robust, forgiving process choice</td>
+</tr>
+</tbody>
+</table>
+<p>This table is worth memorising as a synthesis answer, because it directly connects back to Chapter 1: three of the four constraints are actually <em>solved upstream</em>, in primary treatment, before the wastewater ever reaches the biological stage. This is the concrete evidence for the chapter's central claim that &quot;the success of the whole plant is decided in primary treatment.&quot;</p>
+<h3>Q25. Explain the practical decision sequence an engineer follows when choosing a secondary (biological) process for a tannery. (5 marks)</h3>
+<ol>
+<li><strong>Effluent strength</strong> — above roughly 2,000 mg/L COD, an anaerobic stage (UASB or anaerobic pond) is placed first to strip the load and recover biogas.</li>
+<li><strong>Land availability</strong> — abundant land and a low budget favour ponds/lagoons; constrained land favours extended aeration, MBBR or MBR.</li>
+<li><strong>Operator skill</strong> — where skilled staff are limited, attached-growth or extended-aeration systems are strongly favoured over closely-controlled conventional activated sludge.</li>
+<li><strong>Load variability/toxicity</strong> — frequent shock loads favour biofilm systems (MBBR/IFAS), which recover far faster than suspended sludge after an upset.</li>
+<li><strong>Ammonia limits and reuse requirements</strong> — strict ammonia limits demand a long SRT and an anoxic zone; water reuse demands MBR or ultrafiltration followed by reverse osmosis.</li>
+</ol>
+<p>The common practical answer for a tannery ends up being: equalisation → (anaerobic stage, if strength warrants it) → extended-aeration or MBBR aerobic stage → clarifier → tertiary polishing — because, in the words of the material, &quot;forgiving beats clever&quot; for this kind of effluent.</p>
+<h3>Q26. Describe Common Effluent Treatment Plants (CETPs), and discuss why they often underperform in practice. (5 marks)</h3>
+<p>A CETP is a single, professionally-run treatment plant shared by a cluster of small tanneries that individually cannot afford a full treatment plant of their own — the Savar tannery estate is the example given for Bangladesh. In principle, the economy of scale is favourable: one well-run plant with proper equalisation, sludge handling and monitoring should outperform fifty small, poorly-run ones.</p>
+<p>In practice, CETPs frequently underperform for several linked reasons: <strong>hydraulic overload</strong> beyond the plant's design capacity; <strong>no chrome segregation at source</strong>, so chromium arrives already mixed into the general flow instead of concentrated and recoverable; <strong>sulphide arriving un-oxidised</strong> from individual tanneries; and a highly mixed, variable influent that no single design can be optimised for. Sludge handling is often &quot;the hidden problem,&quot; since mixed chrome-bearing sludge is hazardous waste, and its safe handling and disposal is frequently the weakest link in the whole scheme. The actual fix is not a bigger or cleverer CETP — it is enforcement of <strong>pre-treatment at each individual tannery</strong> (chrome recovery, sulphide oxidation, screening) before discharge into the shared sewer, since, as the material puts it, &quot;a CETP can only be as good as the pre-treatment of the factories feeding it.&quot;</p>
+<hr>
+<h2>Quick-Revision Checklist (night-before summary)</h2>
+<ul>
+<li>Definition of secondary/biological treatment + why primary can't do it</li>
+<li>Aerobic vs anaerobic (table)</li>
+<li>Suspended vs attached growth (definition + designer's choice + comparison table)</li>
+<li>ASP: aeration tank / clarifier / RAS / WAS functions</li>
+<li>Five control parameters (F/M, MLSS/MLVSS, SRT, HRT, SVI) + why SRT ≫ HRT</li>
+<li>Sludge bulking: cause → consequence → cure</li>
+<li>Toxic shock: symptoms → cause → response → prevention (link to Chapter 1)</li>
+<li>Extended aeration: why tanneries prefer it</li>
+<li>SBR: five phases, how it removes C/N/P in one tank</li>
+<li>Biofilm mechanism: diffusion → layered metabolism → sloughing</li>
+<li>Trickling filter construction + recirculation ratio's purpose</li>
+<li>RBC construction + advantages/limitations</li>
+<li>MBBR vs IFAS, and why IFAS suits upgrading an overloaded plant</li>
+<li>Three pond types (anaerobic/facultative/maturation) and their jobs</li>
+<li>UASB: granulation + GLS separator</li>
+<li>Biogas composition/use + tannery-specific H₂S problem</li>
+<li>Anaerobic vs aerobic decision factors</li>
+<li>Four constraints of tannery effluent + where each is solved</li>
+<li>CETP concept and why it underperforms</li>
+</ul>
+<hr>
+<p><em>Prepared from: LE 409 Slides 13.08.26.pdf (pp. 17–end), Chapter 1 – Primary Treatment, and Chapter 2 – Secondary (Physicochemical) Treatment terminology note. Cross-check numeric/design values against your own lecture notes before the exam, since some figures are illustrative ranges rather than fixed constants.</em></p>
+
+</body></html>

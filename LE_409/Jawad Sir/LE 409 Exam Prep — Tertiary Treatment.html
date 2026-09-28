@@ -1,0 +1,386 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}</style><style>:root{color-scheme:light dark;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}}:root[data-theme="dark"]{color-scheme:dark;--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}:root[data-theme="light"]{color-scheme:light}@media print{:root,:root[data-theme="dark"]{color-scheme:light;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}}body{background:var(--md-bg);color:var(--md-text);max-width:720px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:10px;font:14px/1.55 -apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',sans-serif;overflow-wrap:break-word}body>:first-child{margin-top:0}h1,h2,h3,h4,h5,h6{margin:6px 0 0;line-height:1.25;font-weight:600;text-wrap:balance}h1{font-size:1.35em}h2{font-size:1.15em;color:var(--md-muted)}h3,h4,h5,h6{font-size:1em}p,ul,ol,blockquote,table,pre,hr{margin:0}strong{font-weight:600}a{color:var(--md-link);text-decoration:none}a:hover{text-decoration:underline}ul,ol{display:flex;flex-direction:column;gap:6px;padding-left:22px}ul{list-style:disc}ol{list-style:decimal}:is(li,td,th)>*+:is(p,ul,ol,blockquote){margin-top:6px}blockquote{display:flex;flex-direction:column;gap:10px;border-left:2px solid var(--md-rule);padding-left:10px;color:var(--md-muted)}:not(pre)>code{background:var(--md-fill);padding:1px 3px;border-radius:4px;font:.92em 'SF Mono',ui-monospace,Menlo,Consolas,monospace}a>code{background:none;color:inherit}pre{background:var(--md-fill);padding:10px 12px;border-radius:6px;overflow-x:auto;font:12px/1.5 'SF Mono',ui-monospace,Menlo,Consolas,monospace;margin-block:4px}pre code{background:none;padding:0;font:inherit}table{width:100%;border-collapse:separate;border-spacing:2px;font:inherit}th,td{padding:6px 8px;border-radius:3px;text-align:left;vertical-align:top}th{background:var(--md-fill-strong);font-weight:600}td{background:var(--md-fill)}:is(th,td) :not(pre)>code{background:transparent}hr{border:0;border-top:1px solid var(--md-rule-strong);margin-block:10px}img{max-width:100%;height:auto;border-radius:4px}</style>
+</head><body>
+<h1>LE 409 — Tannery Wastewater Management</h1>
+<h2>Exam Prep: Tertiary Treatment — Disinfection, Membranes, and Sludge (Jawad Sir)</h2>
+<p><em>Broad questions (no MCQ, no maths) built from &quot;Tertiary Treatment Lecture&quot; (pp. 1–31 and 41–48; pp. 32–40, the CETP/Savar section, skipped as instructed). Answers follow the companion &quot;Tertiary Treatment — Chapter Study Material&quot; text throughout.</em></p>
+<hr>
+<h2>Part A — Why Tertiary Treatment Is Needed</h2>
+<h3>Q1. Secondary treatment removes 85–95% of BOD. Why is the water still not fit to discharge? Name the four kinds of pollutant that survive, and explain why biological treatment cannot remove each one. (6 marks)</h3>
+<p>Secondary treatment removes only what bacteria can digest — but four kinds of pollutant pass straight through it essentially untouched, and these four define the whole job of tertiary treatment:</p>
+<ul>
+<li><strong>Fine suspended solids (20–100 mg/L)</strong> — the secondary clarifier is good but not perfect; light, slow-settling biological floc particles escape it, and they carry BOD out with them.</li>
+<li><strong>Colour and refractory (hard-to-break) organic matter</strong> — dyes, syntans and vegetable tannins are not biodegradable, so microbes cannot digest them; they pass through completely unchanged and leave the water strongly coloured.</li>
+<li><strong>Dissolved salts</strong> — biological treatment does not touch dissolved salt at all, since bacteria have no way to metabolise sodium chloride or sulphate. Tannery effluent commonly carries 10,000–40,000 mg/L TDS against a discharge limit of 2,100 mg/L — this is the worst of the four problems, and the one that decides tannery tertiary design.</li>
+<li><strong>Pathogens</strong> — secondary treatment kills 90–99% of bacteria, which sounds impressive, but many thousands still remain in every millilitre.</li>
+</ul>
+<p><strong>Key idea:</strong> primary treatment removes what settles, secondary treatment removes what is biodegradable, and tertiary treatment removes what is left — exactly the pollutants biology cannot touch.</p>
+<h3>Q2. Define tertiary treatment, and explain the two features that make it fundamentally different from primary and secondary treatment. (4 marks)</h3>
+<p>Tertiary treatment (also called advanced treatment) is any process used after secondary treatment to remove the pollutants biological treatment cannot remove, so the water meets a strict discharge limit or becomes clean enough to reuse. Two things distinguish it from the stages before it:</p>
+<ul>
+<li><strong>It is physical and chemical, not biological</strong> — filtration, adsorption, oxidation, and membranes, rather than microbial digestion.</li>
+<li><strong>It is selective</strong> — a plant chooses only the units it actually needs for the pollutants it actually has. A plant discharging to an irrigation channel may need only disinfection, while a plant wanting to reuse its water needs the full membrane train.</li>
+</ul>
+<h3>Q3. Describe the four drivers that decide how far a treatment plant must go with tertiary treatment, and state the process typically used to satisfy each. (5 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>What it asks for</th>
+<th>Process used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discharge standard</td>
+<td>Colour, COD and solids within the legal limit</td>
+<td>Filtration; activated carbon; oxidation</td>
+</tr>
+<tr>
+<td>Public health</td>
+<td>Kill pathogens before discharge or irrigation</td>
+<td>Chlorination, UV or ozone</td>
+</tr>
+<tr>
+<td>Water scarcity or cost</td>
+<td>Water clean enough to reuse in the factory</td>
+<td>Ultrafiltration, then reverse osmosis</td>
+</tr>
+<tr>
+<td>Zero liquid discharge</td>
+<td>No liquid leaves the site at all</td>
+<td>RO, evaporation, crystallisation</td>
+</tr>
+</tbody>
+</table>
+<p>These four drivers become progressively more demanding down the list — meeting a discharge standard is the minimum requirement, while zero liquid discharge is the most extreme response, usually adopted only where regulation compels it or water is genuinely scarce.</p>
+<h3>Q4. Present the ECR 2023 discharge limits relevant to tertiary treatment, and explain which parameter is hardest for a tannery to meet, and why. (5 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>ECR 2023 limit</th>
+<th>Process usually needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suspended solids</td>
+<td>150 mg/L</td>
+<td>Filtration</td>
+</tr>
+<tr>
+<td>BOD₅</td>
+<td>50 mg/L</td>
+<td>Usually met by secondary; filtration helps</td>
+</tr>
+<tr>
+<td>COD</td>
+<td>200 mg/L</td>
+<td>Activated carbon or chemical oxidation</td>
+</tr>
+<tr>
+<td>Colour</td>
+<td>150 Hazen</td>
+<td>Carbon, ozone, coagulation</td>
+</tr>
+<tr>
+<td>Total dissolved solids</td>
+<td>2,100 mg/L</td>
+<td>Reverse osmosis, or salt reduction at source</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>6–9</td>
+<td>Neutralisation</td>
+</tr>
+<tr>
+<td>Total chromium</td>
+<td>2.0 mg/L</td>
+<td>Recovered in primary treatment</td>
+</tr>
+</tbody>
+</table>
+<p>After a good secondary stage, a tannery usually <strong>complies on BOD</strong>, is <strong>marginal on COD and colour</strong>, and <strong>fails badly on TDS</strong>. TDS is the hardest limit to meet because it is the one parameter no upstream stage (screening, settling, biological treatment, filtration, carbon, ozone) can touch at all — only a membrane process (reverse osmosis) can remove dissolved salt, and RO is by far the most capital- and energy-intensive process in the whole tertiary train. This is why TDS decides tannery tertiary design and is the most expensive problem to solve.</p>
+<h3>Q5. Explain the standard order in which tertiary treatment units are arranged, and why this order matters. (4 marks)</h3>
+<p>Tertiary units are almost always placed in the fixed sequence: <strong>Filtration → Adsorption/Oxidation → Membranes → Disinfection</strong>. This order exists because each stage protects the one after it: filtration comes first because suspended solids would otherwise block carbon beds, foul membranes, and physically shield bacteria from disinfectants. Adsorption and oxidation come next, removing colour and hard COD that would otherwise foul the membranes downstream or consume the chlorine/ozone dose meant for pathogens. Membranes then remove the dissolved salts. Disinfection is placed last, so it acts on water that is already clear — meaning only a small dose is needed to achieve the required kill.</p>
+<hr>
+<h2>Part B — Filtration</h2>
+<h3>Q6. Why is filtration needed after a well-run secondary treatment stage, beyond simply meeting the suspended-solids discharge limit? (4 marks)</h3>
+<p>A secondary clarifier still lets through 20–100 mg/L of suspended solids — light, small biological floc particles that are too slow-settling to remove with extra settling time at sensible cost, so they must instead be strained out. Besides the suspended-solids limit itself, there are three further reasons to filter: these particles <strong>carry BOD</strong> with them, so removing them also cuts effluent BOD; they <strong>shelter bacteria</strong> from disinfectants, reducing disinfection effectiveness; and they <strong>foul</strong> any carbon bed or membrane placed further down the treatment train. This is exactly why filtration is placed first in the tertiary sequence.</p>
+<h3>Q7. Describe the three mechanisms by which a granular (sand) filter removes suspended particles from wastewater. (4 marks)</h3>
+<p>Water flows downward through a bed of sand, or coarse anthracite over sand (typically 0.6–1.2 m deep), and particles are removed by three mechanisms working together:</p>
+<ul>
+<li><strong>Straining</strong> — particles larger than the openings between grains are physically held at the surface.</li>
+<li><strong>Sedimentation and interception</strong> — inside the bed, particles settle onto grains or strike them as the water follows its winding path through the pore spaces.</li>
+<li><strong>Adhesion</strong> — once a particle touches a grain, surface forces hold it there; a thin biological film that develops on the grains assists this process.
+As the bed progressively fills with captured solids, headloss rises and filtrate quality worsens, at which point the bed is backwashed — clean water (often assisted by air) is pushed upward to lift the bed and flush the accumulated solids away, typically using 2–5% of the plant's throughput.</li>
+</ul>
+<hr>
+<h2>Part C — Disinfection: Principles</h2>
+<h3>Q8. Distinguish disinfection from sterilisation, and describe the four ways a disinfectant can kill or inactivate an organism. (4 marks)</h3>
+<p><strong>Disinfection</strong> is the selective destruction of disease-causing organisms — enough to make the water safe, though some organisms still survive. <strong>Sterilisation</strong> is the destruction of every organism without exception; it is neither possible nor necessary in wastewater treatment. A disinfectant acts by one or more of four mechanisms: <strong>damage to the cell wall</strong> (contents leak out and the cell dies); <strong>change in cell permeability</strong> (the membrane can no longer control what enters or leaves); <strong>damage to nucleic acids</strong> (the organism survives but can no longer reproduce — this is how UV works); and <strong>stopping enzyme activity</strong> (the cell's chemistry is disabled — this is mainly how chlorine and ozone work).</p>
+<h3>Q9. State the Chick–Watson relationship, and explain the significance of the CT value in disinfection design. (5 marks)</h3>
+<p>Disinfection is not instantaneous — organisms die off gradually, following first-order kinetics (Chick's law: Nₜ/N₀ = e^(−kt)). Watson added the effect of concentration, giving the combined rule that governs all disinfection practice: <strong>Cⁿ × t = constant</strong>, where C is disinfectant concentration, t is contact time, and n (the dilution coefficient) is close to 1 in practice — so the product <strong>C × t, the CT value</strong>, becomes the single governing design quantity. A given organism needs a given CT value for a given level of kill, and critically, a low dose held for a long time and a high dose held briefly can achieve the same result. This is exactly why every disinfection unit is designed as a <strong>contact tank</strong>, and why <strong>short-circuiting</strong> in that tank is so damaging: water that crosses the tank quickly receives only a fraction of the design CT and leaves effectively untreated, even though the average dose and average retention time both looked correct on paper.</p>
+<h3>Q10. Explain the log-removal convention used to describe disinfection performance, and why the jump from 99% to 99.99% kill is more significant than it first appears. (4 marks)</h3>
+<p>Because disinfection performance spans many orders of magnitude, it is expressed logarithmically: log removal = log₁₀(N₀/N). One log removal means 90% killed (1 in 10 survives); 2-log means 99% (1 in 100 survives); 3-log means 99.9%; 4-log means 99.99%. Going from 99% (2-log) to 99.99% (4-log) sounds like a gain of only 0.99 percentage points, but it is actually a <strong>hundredfold reduction in the number of surviving organisms</strong> — and each additional log of removal typically requires roughly double the CT value. This is why disinfection targets are always specified in log terms rather than percentages: percentages disguise how much harder the last increment of removal actually is.</p>
+<h3>Q11. Describe the six factors that interfere with disinfection, and explain why disinfection is deliberately placed last in the tertiary treatment sequence. (6 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suspended solids</td>
+<td>Shield organisms from the disinfectant and absorb UV light — the single most important interference of all</td>
+</tr>
+<tr>
+<td>Organic matter (COD)</td>
+<td>Consumes chlorine and ozone chemically, leaving less to act on the organisms</td>
+</tr>
+<tr>
+<td>Turbidity and colour</td>
+<td>Absorb and scatter UV light so it cannot penetrate</td>
+</tr>
+<tr>
+<td>Ammonia</td>
+<td>Reacts with chlorine to form chloramines, much weaker disinfectants</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>Decides which chemical form chlorine takes — the strong form or the weak one</td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>Higher temperature speeds up the kill rate</td>
+</tr>
+</tbody>
+</table>
+<p>Every one of these factors is present in tannery effluent. The first two rows explain the placement rule directly: in a turbid, organically loaded effluent, the water itself consumes the disinfectant before it can reach the target organisms, wasting most of the dose. In a filtered, already-polished effluent, by contrast, only a small dose is needed to achieve the same kill — which is precisely why disinfection is placed last, after filtration and, for a coloured tannery effluent, after colour removal as well.</p>
+<hr>
+<h2>Part D — Chlorination</h2>
+<h3>Q12. Describe the chemistry of chlorination, and explain why pH is described as &quot;the single most important fact in chlorination practice.&quot; (5 marks)</h3>
+<p>When chlorine gas dissolves in water it reacts at once: Cl₂ + H₂O → HOCl + H⁺ + Cl⁻. The hypochlorous acid formed then partly dissociates: HOCl ⇌ H⁺ + OCl⁻. Both forms count as &quot;free available chlorine&quot; and appear identically on a laboratory report — but they are far from equivalent: <strong>hypochlorous acid (HOCl) is 40–80 times more effective</strong> than the hypochlorite ion (OCl⁻), because HOCl carries no charge and passes readily through the cell wall, while the negatively charged OCl⁻ is repelled by the negatively charged cell surface. Which form dominates depends entirely on pH: below about pH 6, almost all chlorine exists as HOCl; around pH 7.5 the two are roughly equal; above pH 9, almost all is the weak OCl⁻ form. Consequently, chlorination is far more effective at low pH than at high pH — an effluent left alkaline will disinfect very poorly regardless of how much chlorine is dosed.</p>
+<h3>Q13. Explain chloramine formation and breakpoint chlorination, and discuss why chlorinating tannery effluent is particularly expensive. (5 marks)</h3>
+<p>Tannery effluent carries a lot of ammonia, from deliming and protein breakdown. Chlorine reacts preferentially with this ammonia rather than disinfecting: NH₃ + HOCl → NH₂Cl (monochloramine) + H₂O, and further to NHCl₂ (dichloramine). These chloramines, called the &quot;combined available chlorine,&quot; do disinfect, but are roughly a hundred times weaker than free chlorine and need much longer contact time. If chlorine dosing continues, the measured residual first rises (as chloramines form) then falls (as further chlorine destroys them), reaching a minimum called the <strong>breakpoint</strong> — typically at roughly 8–10 parts chlorine to 1 part ammonia-nitrogen. Only beyond this point does further chlorine appear as free available chlorine. &quot;Breakpoint chlorination&quot; means deliberately dosing past this point to secure a free residual. Because tannery effluent is often rich in ammonia, this breakpoint demand is very large, meaning a great deal of chlorine must be spent simply overcoming the ammonia before any of it is available to disinfect — which is exactly why chlorinating tannery effluent tends to be expensive and, at ordinary doses, unsatisfactory.</p>
+<h3>Q14. Discuss the disadvantages of chlorination as a disinfection method, and explain when dechlorination becomes necessary. (5 marks)</h3>
+<p>Despite its low cost and unique residual protection, chlorination carries four serious drawbacks:</p>
+<ul>
+<li><strong>By-products</strong> — chlorine reacts with residual organic matter to form trihalomethanes (THMs) and haloacetic acids, suspected carcinogens; a coloured, organically rich tannery effluent is a particularly bad case for this.</li>
+<li><strong>Toxic residual</strong> — the same free residual that protects the water downstream is itself poisonous to fish; where the receiving water is sensitive, the effluent must be <strong>dechlorinated</strong> afterward (usually with sulphur dioxide or sodium bisulphite), adding an extra chemical and cost.</li>
+<li><strong>Weak against cysts</strong> — chlorine works well against bacteria but poorly against protozoan cysts such as Cryptosporidium, whatever the dose applied.</li>
+<li><strong>Hazard</strong> — chlorine gas is acutely toxic, and its storage and handling demand strict safety measures.</li>
+</ul>
+<hr>
+<h2>Part E — Ultraviolet (UV) Treatment</h2>
+<h3>Q15. Explain the mechanism by which UV light disinfects water, and discuss why this makes UV both especially effective against protozoan cysts and vulnerable to photoreactivation. (5 marks)</h3>
+<p>UV light kills best at around 254 nm, very close to the wavelength most strongly absorbed by DNA and RNA. When a photon at this wavelength is absorbed by an organism's DNA, it fuses two neighbouring thymine bases into a <strong>thymine dimer</strong>. The DNA strand can then no longer be read or copied, so the organism cannot reproduce — it may remain metabolically alive for a time, but in disinfection terms it is &quot;dead&quot; because it cannot cause infection. This is why UV disinfection is properly called <strong>inactivation</strong> rather than killing.</p>
+<p>This same mechanism explains two further facts: protozoan cysts such as Cryptosporidium and Giardia, which strongly resist chlorine, are inactivated efficiently by UV, since the mechanism (DNA damage) does not depend on the disinfectant penetrating a resistant cell wall the way a chemical oxidant must. But because the DNA is only damaged, not destroyed, some bacteria possess an enzyme that can split the thymine dimers apart again when exposed to visible light — a repair process called <strong>photoreactivation</strong> (a slower repair without light is called dark repair). Designers compensate for this by dosing well above the bare minimum, so that the damage inflicted is too extensive to be repaired.</p>
+<h3>Q16. Discuss why ultraviolet disinfection is particularly difficult to apply to tannery effluent. (5 marks)</h3>
+<p>UV disinfection works only if the light physically reaches the target organism, and how well it does so is measured by <strong>UV transmittance (UVT)</strong> — the percentage of 254 nm light passing through 1 cm of the water. Above 65% UVT, UV works well under normal design; below 50%, it becomes uneconomic or simply ineffective. Tannery effluent is characteristically <strong>coloured</strong>, and colour absorbs ultraviolet light strongly — a dark tannery effluent may transmit only 20–30% of the light, well below the level at which UV remains viable. Suspended solids compound the problem, both by absorbing light directly and by physically shielding organisms in their shadow. As a result, UV is not ruled out for tannery effluent altogether, but it can only be considered <strong>after</strong> the colour has already been removed by activated carbon or ozone — never before that stage.</p>
+<hr>
+<h2>Part F — Ozonolysis</h2>
+<h3>Q17. Explain the two mechanisms by which ozone attacks organic matter and micro-organisms, and describe why this makes ozone capable of destroying colour, unlike chlorine or UV. (5 marks)</h3>
+<p>Ozone (O₃) is an unstable form of oxygen that cannot be stored and must be generated on site, usually via a high-voltage corona discharge. It attacks in two ways: <strong>direct attack</strong>, where the ozone molecule reacts selectively with unsaturated carbon–carbon double bonds — exactly the double bonds found in the chromophores that make dye molecules coloured (this cleavage is what gives &quot;ozonolysis&quot; its name); and <strong>indirect attack</strong>, where, at higher pH, ozone decomposes in water into hydroxyl radicals (·OH), an even stronger, non-selective oxidant (oxidation potential 2.80 V, versus 1.36 V for chlorine) that attacks almost any organic molecule. Because ozone directly cleaves the double bonds responsible for colour, it genuinely <strong>destroys</strong> the coloured dye molecule rather than merely collecting it — which is precisely why ozone, unlike chlorine or UV, is capable of removing colour from tannery effluent, and is a serious alternative to activated carbon for that purpose.</p>
+<h3>Q18. Compare activated carbon and ozone as methods of colour removal, and explain why placing an ozone stage between two biological treatment stages can be particularly effective. (5 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Activated carbon</th>
+<th>Ozone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mechanism</td>
+<td>Adsorption — moves the pollutant onto the carbon</td>
+<td>Oxidation — destroys the molecule</td>
+</tr>
+<tr>
+<td>Residue</td>
+<td>Spent carbon must be regenerated or dumped</td>
+<td>None; ozone reverts to oxygen</td>
+</tr>
+<tr>
+<td>Capacity</td>
+<td>Finite; breakthrough eventually occurs</td>
+<td>Continuous; capacity never runs out</td>
+</tr>
+<tr>
+<td>Capital cost</td>
+<td>Lower</td>
+<td>High (generator, contactor, destructor)</td>
+</tr>
+<tr>
+<td>Running cost</td>
+<td>Carbon replacement/regeneration</td>
+<td>Electricity — substantial</td>
+</tr>
+<tr>
+<td>Side benefit</td>
+<td>Also removes COD</td>
+<td>Makes remaining organics more biodegradable</td>
+</tr>
+</tbody>
+</table>
+<p>Beyond colour removal, ozone offers a further advantage: by cutting large, refractory (hard-to-digest) molecules into smaller fragments, ozonation often makes the remaining organic matter <strong>biodegradable</strong> — food a biological process can actually consume. Placing an ozone stage between two biological treatment stages therefore lets the second biological stage finish off organic matter that neither biological treatment alone, nor ozone alone, could fully handle — a combination that treats what neither process could manage by itself.</p>
+<h3>Q19. Describe the factors an engineer weighs when choosing between chlorination, UV and ozone for a given disinfection duty. (5 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Preferred method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discharge to a distant watercourse; a residual is wanted</td>
+<td>Chlorination</td>
+</tr>
+<tr>
+<td>Sensitive receiving water; no chemicals permitted</td>
+<td>UV — if the effluent is already clear</td>
+</tr>
+<tr>
+<td>Effluent is coloured and the colour must also go</td>
+<td>Ozone</td>
+</tr>
+<tr>
+<td>Protozoan cysts are the specific concern</td>
+<td>UV</td>
+</tr>
+<tr>
+<td>Ammonia is high</td>
+<td>UV or ozone — chlorine would form weak chloramines</td>
+</tr>
+<tr>
+<td>Budget is the overriding constraint</td>
+<td>Chlorination</td>
+</tr>
+<tr>
+<td>Water is to be reused after reverse osmosis</td>
+<td>UV, as a final barrier</td>
+</tr>
+</tbody>
+</table>
+<p>The underlying logic is that each method has one decisive strength the others lack: chlorine alone leaves a protective residual after discharge; UV alone is unaffected by ammonia and is decisively better against cysts; and ozone alone destroys colour and hard COD rather than merely disinfecting. The right choice depends on which of these unique properties the specific situation actually needs.</p>
+<hr>
+<h2>Part G — Reverse Osmosis and Membrane Processes</h2>
+<h3>Q20. Explain why dissolved salts survive every treatment stage up to reverse osmosis, and describe the working principle of reverse osmosis. (5 marks)</h3>
+<p>Screening, settling, biological treatment, filtration, adsorption and oxidation all leave dissolved salts exactly as they found them, because none of these processes can act on ions dissolved in solution — bacteria cannot metabolise salt, and carbon/ozone act on organic molecules, not simple ionic salts. Salt is used lavishly in leather processing (curing, pickling, chrome tanning), and all of it ends up in the effluent, commonly at 10,000–40,000 mg/L TDS against a 2,100 mg/L discharge limit. Only two answers exist: never use the salt in the first place (cleaner production), or separate it physically using a membrane.</p>
+<p><strong>Reverse osmosis</strong> works by reversing natural osmosis. Normally, if fresh water and salt water sit on either side of a membrane that passes water but not salt, water moves of its own accord into the salt solution, diluting it — the pressure that would just stop this movement is the <strong>osmotic pressure</strong>. Applying a pressure to the salty side that is <em>greater</em> than the osmotic pressure reverses the flow: water is squeezed out of the salt solution and through the membrane, leaving the salt behind. Importantly, this is not filtration in the ordinary sense — the membrane has no pores that salt ions are too big to enter; instead, water molecules dissolve into a dense polymer film and diffuse through it while ions do not, which is why the operating pressures required are so high (roughly 15–80 bar) and why the energy cost of RO is significant.</p>
+<h3>Q21. Describe the family of membrane processes, and explain the distinct roles played by microfiltration/ultrafiltration versus nanofiltration/reverse osmosis. (5 marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Process</th>
+<th>Removes</th>
+<th>Pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microfiltration (MF)</td>
+<td>Suspended solids, bacteria</td>
+<td>0.1–2 bar</td>
+</tr>
+<tr>
+<td>Ultrafiltration (UF)</td>
+<td>Colloids, macromolecules, viruses</td>
+<td>1–5 bar</td>
+</tr>
+<tr>
+<td>Nanofiltration (NF)</td>
+<td>Divalent ions, colour, some salts</td>
+<td>5–20 bar</td>
+</tr>
+<tr>
+<td>Reverse osmosis (RO)</td>
+<td>Essentially all dissolved salts</td>
+<td>15–80 bar</td>
+</tr>
+</tbody>
+</table>
+<p>Only NF and RO actually remove dissolved salt. MF and UF do not desalinate at all — their role is instead to <strong>protect the RO membrane</strong> by removing suspended and colloidal material that would otherwise foul it before the water ever reaches the RO stage. Nanofiltration occupies a useful middle position: it rejects divalent ions (such as sulphate) and larger coloured molecules while passing much of the singly-charged salt, at only a fraction of the pressure (and hence energy cost) that RO requires — useful where full desalination is not needed.</p>
+<h3>Q22. Describe what happens to the concentrate (brine) produced by a reverse osmosis plant, and discuss the disposal options available, including zero liquid discharge. (5 marks)</h3>
+<p>Reverse osmosis does not destroy the salt it removes — it <strong>concentrates</strong> it into a much smaller volume of highly saline reject water called the concentrate (or brine). This stream cannot be discharged (it far exceeds the TDS limit), cannot be treated biologically (biology does not touch salt), and cannot simply be ignored. Four options exist, and none is entirely comfortable:</p>
+<ul>
+<li><strong>Discharge to sea or a deep well</strong> — where geography and law permit, which is rarely the case in Bangladesh.</li>
+<li><strong>Evaporation ponds</strong> — simple in principle, but need a large area and a secure lining to prevent groundwater contamination.</li>
+<li><strong>Mechanical evaporation and crystallisation</strong> to a dry solid salt — the zero-liquid-discharge (ZLD) route.</li>
+<li><strong>Use less salt in the first place</strong>, so less arrives at the RO stage to be concentrated at all.</li>
+</ul>
+<p><strong>Zero liquid discharge</strong> means no liquid effluent leaves the site at all: the treatment train runs RO to recover most of the water, then an evaporator to boil off more, then a crystalliser to dry the residue into solid salt. ZLD is technically complete, and has been made compulsory for tannery clusters in parts of India, but it is very expensive — evaporation is energy-intensive, the plant is complex, and the recovered mixed salt is usually too impure to sell. The underlying principle to remember is that every kilogram of salt entering the tannery must eventually leave it — in the effluent, in the concentrate, or as solid salt from a crystalliser — and the cheapest point to deal with it is always at the curing yard, before it is ever dissolved into the process water at all.</p>
+<h3>Q23. Describe the four kinds of fouling that affect reverse osmosis membranes, and explain how each is controlled. (5 marks)</h3>
+<p>Every RO plant's performance depends on controlling fouling, of which there are four kinds:</p>
+<ul>
+<li><strong>Particulate fouling</strong> — suspended matter settling onto the membrane surface; prevented by MF or UF pre-treatment upstream.</li>
+<li><strong>Scaling</strong> — sparingly soluble salts (mainly calcium sulphate and carbonate) precipitating out as the feed becomes concentrated across the membrane; controlled by dosing antiscalants and by limiting the recovery percentage.</li>
+<li><strong>Organic fouling</strong> — a film of organic matter adhering to the membrane surface; controlled by removing COD and colour upstream (which is exactly why activated carbon or ozone is placed before RO in the treatment train).</li>
+<li><strong>Biofouling</strong> — bacteria growing on the membrane as a biofilm; controlled by disinfecting the feed — though free chlorine itself damages polyamide RO membranes and must be removed before the water reaches the membrane.
+The consistent lesson across all four is that RO demands a thoroughly pre-treated feed; skipping upstream treatment to save cost there simply shortens membrane life and increases cleaning frequency downstream.</li>
+</ul>
+<hr>
+<h2>Part H — Cleaner Production Economics (Reflection)</h2>
+<h3>Q24. A tannery management team can fund only one investment this year — automatic float metering with a washing procedure, a chrome recovery unit on the segregated tanyard stream, hair-save unhairing in the beamhouse, or a supervised hose-and-logbook discipline programme. Discuss the factors that should guide this decision, and explain why the option that pays back fastest may not be the one that most reduces the plant's pollution load. (6 marks)</h3>
+<p>This kind of decision turns on two separate questions that are easy to conflate: <strong>which option pays for itself soonest</strong>, and <strong>which option does the most to reduce the pollution actually reaching the treatment plant (and the CETP tariff bill, where treatment is charged per cubic metre of effluent)</strong>.</p>
+<ul>
+<li><strong>Housekeeping measures</strong> (metering with a washing procedure; supervisor-led hose and logbook discipline) cost almost nothing to implement, since they mostly require training, monitoring and management attention rather than capital equipment. They typically pay back very quickly, because water and chemical savings begin immediately — but their impact on the <em>total</em> pollution load is usually modest, since they mainly reduce waste and overuse rather than eliminating a pollutant category altogether.</li>
+<li><strong>Process-level investments</strong> (a chrome recovery unit; hair-save unhairing) require real capital, and payback is slower and depends on the value of the material recovered (recovered chromium, saved hide substance) versus the cost of the equipment — but they attack the pollution load structurally, removing an entire category of pollutant (chromium in the tanyard stream; hair-derived organic load and sulphide use in the beamhouse) rather than merely trimming waste.</li>
+</ul>
+<p>The key insight is that &quot;pays back first&quot; and &quot;reduces the CETP's problem most&quot; are frequently <strong>not the same option</strong> — a low-cost housekeeping measure may look attractive on a simple payback calculation, while a capital investment in chrome recovery or hair-save unhairing may do far more to protect the treatment plant (and the sludge disposal problem) even though it takes longer to repay. A well-run tannery, wherever budget allows, treats these as complementary rather than competing choices: housekeeping measures should be adopted regardless of cost, precisely because they cost almost nothing, while capital investment decisions should be judged primarily by their effect on the pollution load and the hazard classification of the resulting sludge, not by payback period alone.</p>
+<hr>
+<h2>Part I — Sludge</h2>
+<h3>Q25. Explain the statement &quot;a treatment plant does not make pollution disappear — it moves it from a large volume of water into a small volume of sludge,&quot; and discuss the practical significance of this for plant operating costs. (4 marks)</h3>
+<p>Every process described across the secondary and tertiary treatment chapters has been presented as <em>removing</em> pollutants from water — but with the partial exception of oxidation processes (such as ozone, which genuinely destroys organic molecules), none of them actually destroys anything. What they do instead is <strong>concentrate</strong> the pollution that was spread through a large volume of water into a much smaller volume of solids: sludge. Nothing has vanished; it has simply changed location and form. This is easy to forget, but it has serious practical consequences — sludge becomes the plant's largest remaining problem, and sludge handling routinely accounts for <strong>a third to a half of the total operating cost</strong> of a treatment works. In a tannery specifically, that sludge also contains the chromium removed from the wastewater, which raises the stakes considerably.</p>
+<h3>Q26. Distinguish the hazard posed by Cr(III) from that posed by Cr(VI), and explain how careless sludge handling can convert one into the other. (5 marks)</h3>
+<p><strong>Cr(III)</strong> — trivalent chromium, the form actually used in tanning — is relatively insoluble and of comparatively low toxicity. <strong>Cr(VI)</strong> — hexavalent chromium — is soluble, mobile, toxic and carcinogenic, making it a far more dangerous substance to have loose in the environment. Critically, careless handling can convert the harmless form into the hazardous one: Cr(III) can be oxidised to Cr(VI) during <strong>incineration at the wrong temperature</strong>, in the <strong>presence of oxidising agents</strong>, or under <strong>alkaline conditions during prolonged storage</strong>. This means a disposal route chosen without proper thought can actively turn a manageable waste into a genuinely dangerous one — the hazard is not fixed by the chromium's origin, but can be created or avoided by how the sludge is subsequently handled.</p>
+<h3>Q27. Explain the single upstream decision that determines whether a tannery's chromium ends up as a recovered raw material or as hazardous waste. (4 marks)</h3>
+<p>The same chromium can end up in either of two very different places, and what decides which is a single decision made far upstream: <strong>whether the tanyard (chrome-tanning) stream was segregated from the rest of the tannery's wastewater before it ever reached the general effluent or sludge</strong>. If the chrome-bearing stream is kept separate, the chromium can be recovered — typically as basic chromium sulphate — a genuine raw material worth money, ready to be reused in tanning. If it is instead allowed to mix into the general wastewater stream, that same chromium ends up distributed through tens of tonnes of ordinary mixed sludge, at which point it cannot be economically recovered, the entire sludge batch becomes classified as hazardous waste, and disposal — rather than earning value — now costs money. The engineering conclusion is therefore that chromium must be <strong>segregated and recovered at the tannery itself</strong>, in primary treatment, rather than left to be dealt with (at far greater cost and difficulty) once it has already reached the mixed sludge.</p>
+<h3>Q28. Describe how a tannery's other solid wastes — fleshings, trimmings, splits, shavings and hair — can be converted from disposal costs into useful products. (5 marks)</h3>
+<p>Fleshings, trimmings, splits and shavings are all rich in collagen, and it is increasingly recognised that these are raw materials sitting in the waste yard rather than true wastes:</p>
+<ul>
+<li><strong>Non-chrome trimmings and splits</strong> can be converted into <strong>gelatin</strong> and <strong>collagen hydrolysate</strong>.</li>
+<li><strong>Fleshings</strong> can be rendered into <strong>fats and tallow</strong>, or digested to yield <strong>biogas</strong>.</li>
+<li><strong>Hair recovered from hair-save unhairing</strong> (rather than dissolved in a conventional liming process) can be processed into <strong>keratin</strong>.</li>
+<li><strong>Chrome shavings</strong> can be treated enzymatically to separate the <strong>protein</strong> from the <strong>chromium</strong>, recovering both fractions separately rather than sending the whole shaving to landfill as mixed hazardous waste.
+Each of these conversions turns what would otherwise be a disposal cost into a saleable product, and each one takes load off the landfill — which is exactly why the material stresses that a leather engineer's combined knowledge of both the tanning process and its waste streams is worth the most at this stage of the plant.</li>
+</ul>
+<hr>
+<h2>Quick-Revision Checklist</h2>
+<ul>
+<li>Four pollutants surviving secondary treatment (fine solids, colour/refractory COD, dissolved salts, pathogens) + why biology can't remove each</li>
+<li>Definition of tertiary treatment: physical/chemical + selective</li>
+<li>Four drivers (discharge standard, public health, water scarcity, ZLD) + matching process</li>
+<li>ECR 2023 limits table + why TDS is hardest for a tannery</li>
+<li>Fixed order: filtration → adsorption/oxidation → membranes → disinfection, and why</li>
+<li>Filtration: why needed (4 reasons) + 3 removal mechanisms (straining, sedimentation/interception, adhesion)</li>
+<li>Disinfection vs sterilisation; 4 mechanisms of disinfectant action</li>
+<li>Chick–Watson / CT value; contact tank + short-circuiting</li>
+<li>Log-removal convention; why 99%→99.99% is a 100x change</li>
+<li>Six disinfection interferences; why disinfection is last</li>
+<li>Chlorination chemistry (Cl₂+H₂O→HOCl+H⁺+Cl⁻; HOCl⇌H⁺+OCl⁻); pH dependence</li>
+<li>Chloramines + breakpoint chlorination; why tannery chlorination is expensive</li>
+<li>Chlorination's four drawbacks (THMs, toxic residual, weak on cysts, hazard) + dechlorination</li>
+<li>UV mechanism (thymine dimer); why effective on cysts; photoreactivation</li>
+<li>UV transmittance and why tannery colour defeats UV unless pre-treated</li>
+<li>Ozone's direct (double-bond cleavage) vs indirect (hydroxyl radical) mechanisms; why it removes colour</li>
+<li>Carbon vs ozone for colour removal (table); ozone's biodegradability side-benefit</li>
+<li>Choosing between chlorine/UV/ozone (situational table)</li>
+<li>Why salt survives everything before RO; osmosis vs reverse osmosis principle</li>
+<li>Membrane family (MF/UF/NF/RO): what each removes and MF/UF's protective role</li>
+<li>RO concentrate/brine: 4 disposal options + ZLD concept and cost</li>
+<li>Four kinds of RO fouling + control measures</li>
+<li>Housekeeping vs capital investment: payback speed vs pollution-load impact (not always the same choice)</li>
+<li>&quot;Treatment concentrates, doesn't destroy&quot; — sludge as the plant's biggest remaining problem</li>
+<li>Cr(III) vs Cr(VI) hazard + how careless handling converts one to the other</li>
+<li>Chrome segregation as the single decision that determines recovered material vs hazardous waste</li>
+<li>Other solid wastes → gelatin, fats/biogas, keratin, protein+chromium (turning waste into product)</li>
+</ul>
+<hr>
+<p><em>Prepared from: &quot;Tertiary Treatment&quot; lecture slides (pp. 1–31, 41–48; CETP/Savar section on pp. 32–40 skipped per instruction) and &quot;Tertiary Treatment — a study text in simple English,&quot; both ILET, University of Dhaka. Numeric worked examples from the study material were intentionally omitted, keeping this guide to broad, descriptive questions and answers.</em></p>
+
+</body></html>
