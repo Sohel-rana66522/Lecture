@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BUS-401 Q&amp;A Bank — ISO 9000/14000</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f3ec;
+    --paper:#fffdf8;
+    --ink:#1e1b16;
+    --ink-soft:#524a3d;
+    --rule:#d8cfb8;
+    --accent:#1e5aa8;
+    --accent-soft:#e3ecf7;
+    --tag:#3d5a4a;
+    --tag-soft:#e3ede7;
+    --shadow: 0 1px 0 rgba(30,27,22,0.06);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg:#141821;
+      --paper:#1b2029;
+      --ink:#e7e6de;
+      --ink-soft:#aab0bd;
+      --rule:#333a48;
+      --accent:#6fa3e0;
+      --accent-soft:#1f2c3d;
+      --tag:#9fc6ae;
+      --tag-soft:#1c2a24;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#141821;
+    --paper:#1b2029;
+    --ink:#e7e6de;
+    --ink-soft:#aab0bd;
+    --rule:#333a48;
+    --accent:#6fa3e0;
+    --accent-soft:#1f2c3d;
+    --tag:#9fc6ae;
+    --tag-soft:#1c2a24;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-padding-top: calc(env(safe-area-inset-top,0px) + 70px);}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .top-bar{
+    position:sticky;
+    top: env(safe-area-inset-top,0px);
+    z-index:20;
+    background:var(--bg);
+    border-bottom:1px solid var(--rule);
+    padding: 14px clamp(16px,4vw,40px);
+    padding-top: calc(14px + env(safe-area-inset-top,0px));
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .top-bar .course{
+    font-family:'Source Serif 4', serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+  }
+  .top-bar .sub{
+    color:var(--ink-soft);
+    font-size:0.85rem;
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding: clamp(24px,5vw,56px) clamp(16px,4vw,40px) 80px;
+  }
+
+  .masthead{margin-bottom:1.6rem;}
+  .masthead .kicker{
+    color:var(--accent);
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing:0.06em;
+    margin-bottom:0.5rem;
+  }
+  h1{
+    font-family:'Source Serif 4', serif;
+    font-size:clamp(1.6rem,4.5vw,2.3rem);
+    line-height:1.15;
+    margin:0 0 0.6rem;
+    font-weight:700;
+  }
+  .masthead p{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    line-height:1.55;
+    max-width:66ch;
+    margin:0.4rem 0 0;
+  }
+
+  .rule-note{
+    background:var(--accent-soft);
+    border:1px solid var(--rule);
+    border-left:3px solid var(--accent);
+    border-radius:0 8px 8px 0;
+    padding:0.9rem 1.1rem;
+    font-size:0.9rem;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin:1.4rem 0 2.4rem;
+  }
+  .rule-note strong{color:var(--ink);}
+
+  nav.toc{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:10px;
+    padding:1rem 1.2rem;
+    margin:0 0 2.6rem;
+    box-shadow:var(--shadow);
+  }
+  nav.toc .toc-title{
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink-soft);
+    margin-bottom:0.6rem;
+    font-weight:600;
+  }
+  nav.toc ol{
+    margin:0;
+    padding-left:1.1rem;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li{margin-bottom:0.35rem;}
+  nav.toc a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:0.92rem;
+    border-bottom:1px solid transparent;
+  }
+  nav.toc a:hover{border-bottom-color:var(--accent);}
+
+  section.topic{margin-bottom:3rem;}
+  section.topic h2{
+    font-family:'Source Serif 4', serif;
+    font-size:1.3rem;
+    font-weight:700;
+    display:flex;
+    align-items:baseline;
+    gap:0.6rem;
+    padding-bottom:0.5rem;
+    border-bottom:2px solid var(--ink);
+    margin:0 0 1.3rem;
+    scroll-margin-top: calc(90px + env(safe-area-inset-top,0px));
+  }
+  section.topic h2 .num{
+    font-size:0.95rem;
+    color:var(--accent);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+  }
+
+  .qa{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:10px;
+    padding:1.1rem 1.3rem 1.2rem;
+    margin-bottom:1rem;
+    box-shadow:var(--shadow);
+  }
+  .qa .q{
+    font-weight:600;
+    font-size:1.01rem;
+    line-height:1.45;
+    margin:0 0 0.55rem;
+    display:flex;
+    gap:0.55rem;
+  }
+  .qa .q .qmark{color:var(--accent); flex:0 0 auto;}
+  .qa .a{
+    color:var(--ink-soft);
+    font-size:0.96rem;
+    line-height:1.62;
+    margin:0;
+  }
+  .qa .a strong{color:var(--ink);}
+  .qa ul, .qa ol{
+    margin:0.4rem 0 0.2rem;
+    padding-left:1.2rem;
+  }
+  .qa li{margin-bottom:0.35rem; line-height:1.55; color:var(--ink-soft);}
+  .qa li strong{color:var(--ink);}
+  .qa .sub-list{margin-top:0.2rem; padding-left:1.3rem;}
+  .qa .sub-list li{margin-bottom:0.25rem; font-size:0.93rem;}
+
+  .checklist{
+    background:var(--paper);
+    border:1px dashed var(--rule);
+    border-radius:10px;
+    padding:1.2rem 1.4rem;
+  }
+  .checklist h2{
+    font-family:'Source Serif 4', serif;
+    font-size:1.15rem;
+    margin:0 0 0.8rem;
+  }
+  .checklist label{
+    display:flex;
+    align-items:flex-start;
+    gap:0.6rem;
+    margin-bottom:0.6rem;
+    font-size:0.94rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+    cursor:pointer;
+  }
+  .checklist input{margin-top:0.25rem; accent-color:var(--accent); flex:0 0 auto;}
+  .checklist input:checked + span{
+    color:var(--ink-soft);
+    text-decoration:line-through;
+    opacity:0.6;
+  }
+
+  footer{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.78rem;
+    margin-top:3rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--rule);
+  }
+
+  @media (max-width:520px){ nav.toc ol{columns:1;} }
+  @media print{
+    .top-bar{position:static;}
+    .qa{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="course">BUS-401 · Total Quality Management</span>
+  <span class="sub">Q&amp;A Bank — ISO 9000/14000</span>
+</div>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="kicker">Fatema Mam · Source: ISO-9000_14000_LE.pdf</div>
+    <h1>ISO 9000/14000 — Q&amp;A Bank</h1>
+    <p>Covers ISO 9001, EMS, the ISO 10000 series, and ISO 45001 — built strictly from the blue-heading slides in the deck.</p>
+  </div>
+
+  <div class="rule-note">
+    <strong>Scope rule applied:</strong> only slides with a blue-colored heading were treated as exam topics. Slides with other heading colors — ISO 9000 series, ISO 9000 Principle, ISO 14000 Family/Standards Family, Becoming ISO 14001 certified, 17 Requirements in ISO 14001, EMS Model, EMS Key Elements, ISO/IEC 27001, LWG, etc. — were excluded. Note: the "…following clauses" heading repeats across 4 slides in the deck, but only one of those four is actually blue (Clause 7 / Product Realization) — the other three are black and were left out.
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">Jump to a topic</div>
+    <ol>
+      <li><a href="#iso9001">1. ISO 9001</a></li>
+      <li><a href="#topics">2. Topics ISO 9001 Covers</a></li>
+      <li><a href="#clause7">3. Clause 7 — Product Realization</a></li>
+      <li><a href="#review2026">4. Review — May 2026</a></li>
+      <li><a href="#ems">5. Environmental Management System (EMS)</a></li>
+      <li><a href="#iso10000">6. ISO 10000 Series</a></li>
+      <li><a href="#iso45001">7. ISO 45001</a></li>
+    </ol>
+  </nav>
+
+  <section class="topic" id="iso9001">
+    <h2><span class="num">01</span> ISO 9001</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q1.</span> What is ISO 9001?</p>
+      <p class="a">ISO 9001 is the international standard that specifies requirements for a <strong>Quality Management System (QMS)</strong>. Organizations use it to demonstrate their ability to consistently provide products and services that meet customer and regulatory requirements. It is the most popular standard in the ISO 9000 series and the only standard in the series to which any organization can actually certify.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q2.</span> When was ISO 9001 first published, and what is the current version?</p>
+      <p class="a">ISO 9001 was first published in <strong>1987</strong> by the International Organization for Standardization (ISO), an international agency composed of the national standards bodies of more than 160 countries. The current version of ISO 9001 was released in <strong>May 2026</strong>.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q3.</span> To whom does ISO 9001:2026 apply, and how widely is it used?</p>
+      <p class="a">It applies to any organization, regardless of size or industry. More than <strong>one million organizations</strong> from more than <strong>160 countries</strong> have applied the ISO 9001 standard requirements to their quality management systems.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q4.</span> How does using the ISO 9001 standard help organizations?</p>
+      <ul>
+        <li>Organize processes</li>
+        <li>Improve the efficiency of processes</li>
+        <li>Continually improve</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="topic" id="topics">
+    <h2><span class="num">02</span> What Topics Does ISO 9001 Cover?</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q5.</span> What topics does ISO 9001 cover?</p>
+      <p class="a">ISO 9001 is based on the <strong>Plan-Do-Check-Act (PDCA)</strong> methodology and provides a process-oriented approach to documenting and reviewing the structure, responsibilities, and procedures required to achieve effective quality management in an organization. Specific sections cover:</p>
+      <ol>
+        <li>Requirements for a quality management system, including documented information, planning, and determining process interactions</li>
+        <li>Responsibilities of management</li>
+        <li>Management of resources, including human resources and an organization's work environment</li>
+        <li>Product realization, including the steps from design to delivery</li>
+        <li>Measurement, analysis, and improvement of the QMS through activities like internal audits and corrective/preventive action</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="topic" id="clause7">
+    <h2><span class="num">03</span> ISO 9001 Requirements — Clause 7 (Product Realization)</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q6.</span> Outline Clause 7 (Product Realization) of the ISO 9001 requirements.</p>
+      <ul>
+        <li><strong>7.1</strong> Planning of product realization</li>
+        <li><strong>7.2</strong> Customer-related processes
+          <ul class="sub-list">
+            <li>7.2.1 Determination of requirements related to the product</li>
+            <li>7.2.2 Review of requirements related to the product</li>
+            <li>7.2.3 Customer communication</li>
+          </ul>
+        </li>
+        <li><strong>7.3</strong> Design and development
+          <ul class="sub-list">
+            <li>7.3.1 Design and development planning</li>
+            <li>7.3.2 Design and development inputs</li>
+            <li>7.3.3 Design and development outputs</li>
+            <li>7.3.4 Design and development review</li>
+            <li>7.3.5 Design and development verification</li>
+            <li>7.3.6 Design and development validation</li>
+            <li>7.3.7 Control of design and development changes</li>
+          </ul>
+        </li>
+        <li><strong>7.4</strong> Purchasing
+          <ul class="sub-list">
+            <li>7.4.1 Purchasing process</li>
+            <li>7.4.2 Purchasing information</li>
+            <li>7.4.3 Verification of purchased product</li>
+          </ul>
+        </li>
+        <li><strong>7.5</strong> Production and service provision
+          <ul class="sub-list">
+            <li>7.5.1 Control of production and service provision</li>
+            <li>7.5.2 Validation of processes for production and service provision</li>
+            <li>7.5.3 Identification and traceability</li>
+            <li>7.5.4 Customer property</li>
+            <li>7.5.5 Preservation of product</li>
+          </ul>
+        </li>
+        <li><strong>7.6</strong> Control of monitoring and measuring equipment</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q7.</span> Why does Clause 7.3 (Design and Development) include review, verification, and validation as separate sub-clauses?</p>
+      <p class="a">Each checks a different thing: <strong>review</strong> evaluates the design's ability to meet requirements at planned stages, <strong>verification</strong> confirms the design outputs meet the design inputs, and <strong>validation</strong> confirms the resulting product meets requirements for its intended/specified use. Keeping them separate ensures each check happens deliberately rather than being assumed by the others.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="review2026">
+    <h2><span class="num">04</span> Review — May 2026 (Direction of the Revised Standard)</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q8.</span> What are the key focus areas of the May 2026 review of ISO 9001?</p>
+      <ol>
+        <li><strong>Ethics &amp; Quality Culture</strong> — leadership accountability goes beyond processes to building a culture of integrity and trust.</li>
+        <li><strong>Risk &amp; Opportunity Clarity</strong> — stronger guidance to separate and manage risk and opportunity effectively.</li>
+        <li><strong>Climate Change &amp; Stakeholder Focus</strong> — organizations must integrate sustainability and environmental risks into their QMS.</li>
+        <li><strong>Digital Transformation</strong> — recognition of AI, IoT, and Industry 4.0 in quality systems.</li>
+        <li><strong>Alignment with Other Standards</strong> — easier integration with ISO 14001, ISO 27001, and ISO 45001.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="topic" id="ems">
+    <h2><span class="num">05</span> Environmental Management System (EMS)</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q9.</span> What is an EMS?</p>
+      <p class="a">An EMS is a systematic way of managing an organization's environmental affairs.</p>
+      <ul>
+        <li>Based on the <strong>Plan-Do-Check-Act (PDCA)</strong> model</li>
+        <li>Focused on continual improvement of the system</li>
+        <li>Addresses the immediate and long-term impact of an organization's products, services and processes on the environment</li>
+        <li>A tool to improve environmental performance</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q10.</span> What characteristics define an effective EMS?</p>
+      <ul>
+        <li>Focuses not only on <strong>what</strong> is done but also <strong>why</strong></li>
+        <li>A top management priority</li>
+        <li>Dynamic</li>
+        <li>Flexible and simple</li>
+        <li>Relies on employee involvement</li>
+        <li>Endorses continual improvement</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q11.</span> What should organizations keep in mind when building or using an EMS?</p>
+      <ul>
+        <li>Much of an EMS may already be in place within the organization</li>
+        <li>The key is using a <strong>systematic approach</strong> to planning, controlling, and improving environmental efforts</li>
+        <li>It can be a vehicle for positive change</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q12.</span> How should an EMS audit be designed, and what areas does it typically cover?</p>
+      <p class="a">Each EMS audit should be designed to fit that specific company's legal requirements and environmental interactions, working closely with the company's team and providing clear, honest communication from the start. The audit's purview is broad, covering:</p>
+      <ul>
+        <li>Drinking water</li>
+        <li>Storm water</li>
+        <li>Wastewater</li>
+        <li>Waste disposal</li>
+        <li>Storage and disposal of hazardous chemicals</li>
+        <li>Tanks, both above ground and underground</li>
+        <li>Air emissions</li>
+        <li>Emergency response plans</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q13.</span> What documents and topics does EMS auditing typically review?</p>
+      <ul>
+        <li>Presence of a written EMS manual</li>
+        <li>Organizational charts and position descriptions</li>
+        <li>Corporate environmental procedures and policies</li>
+        <li>Training requirements</li>
+        <li>External and internal communication plans</li>
+        <li>Operational and maintenance budgets</li>
+        <li>EMS internal verification procedures</li>
+      </ul>
+      <p class="a">The internal audit of an EMS is meant to be straightforward and easy to understand.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="iso10000">
+    <h2><span class="num">06</span> ISO 10000 Series</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q14.</span> What is the ISO 10000 series?</p>
+      <p class="a">The ISO 10000 series is a collection of international standards and guidelines created by the International Organization for Standardization. It focuses on managing customer satisfaction, handling complaints, resolving disputes, and providing supportive guidance for quality management systems.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="iso45001">
+    <h2><span class="num">07</span> ISO 45001</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q15.</span> What is ISO 45001?</p>
+      <p class="a">ISO 45001 is an international standard that specifies requirements for an <strong>Occupational Health and Safety (OH&amp;S) management system</strong>. It provides a framework for organizations to manage risks and improve OH&amp;S performance.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q16.</span> What criteria and elements does ISO 45001 establish?</p>
+      <p class="a">It establishes criteria for OH&amp;S policy, objectives, planning, implementation, operation, auditing, and review. Key elements include:</p>
+      <ul>
+        <li>Leadership commitment</li>
+        <li>Worker participation</li>
+        <li>Hazard identification and risk assessment</li>
+        <li>Legal and regulatory compliance</li>
+        <li>Emergency planning</li>
+        <li>Incident investigation</li>
+        <li>Continual improvement</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q17.</span> What methodology does ISO 45001 use, and to whom does it apply?</p>
+      <p class="a">It utilizes the <strong>Plan-Do-Check-Act (PDCA)</strong> methodology to systematically manage health and safety risks. It applies to organizations of all sizes and can be integrated with other ISO management system standards.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q18.</span> Why is ISO 45001 important? (Value to organizations)</p>
+      <ul>
+        <li>Provides an internationally-recognized framework for managing OH&amp;S risks, enabling systematic hazard assessment and risk control, which reduces workplace injuries, illnesses, and incidents.</li>
+        <li>Shows employees and external stakeholders the organization's commitment to worker health, safety, and wellbeing — boosting reputation, morale, and retention.</li>
+        <li>Supports compliant risk management, helping lower insurance costs and ensuring legal/regulatory conformity.</li>
+        <li>Strengthens organizational resilience against safety threats and crises through required emergency preparedness and response protocols.</li>
+        <li>The PDCA framework allows the OH&amp;S system to continually improve and evolve.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q19.</span> List the key benefits of ISO 45001.</p>
+      <ol>
+        <li>Framework to systematically manage OH&amp;S risks</li>
+        <li>Reduced workplace incidents and injuries</li>
+        <li>Demonstrated commitment to worker health and safety</li>
+        <li>Ensured compliance with OH&amp;S regulations</li>
+        <li>Increased organizational resilience</li>
+        <li>Continual improvement of OH&amp;S performance</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="checklist" id="checklist">
+    <h2>Quick Revision Checklist</h2>
+    <label><input type="checkbox"><span>ISO 9001: definition, publish year (1987) + current version (May 2026), applicability, benefits</span></label>
+    <label><input type="checkbox"><span>Topics ISO 9001 covers: PDCA basis + 5 topic areas</span></label>
+    <label><input type="checkbox"><span>Clause 7 (Product Realization): all sub-clauses 7.1–7.6</span></label>
+    <label><input type="checkbox"><span>May 2026 Review: 5 focus areas (ethics, risk, climate, digital, alignment)</span></label>
+    <label><input type="checkbox"><span>EMS: definition, characteristics, implementation notes</span></label>
+    <label><input type="checkbox"><span>EMS Audit: design principle + areas covered + documents reviewed</span></label>
+    <label><input type="checkbox"><span>ISO 10000 series: definition/purpose</span></label>
+    <label><input type="checkbox"><span>ISO 45001: definition, elements, PDCA use, importance, 6 benefits</span></label>
+  </div>
+
+  <footer>BUS-401 · Total Quality Management for Leather and Leather Products — revision material compiled from Fatema Mam's slides.</footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BUS-401 Q&amp;A Bank — TQM Tools &amp; Techniques II</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f3ec;
+    --paper:#fffdf8;
+    --ink:#1e1b16;
+    --ink-soft:#524a3d;
+    --rule:#d8cfb8;
+    --accent:#8a3b2b;
+    --accent-soft:#f1e3d9;
+    --tag:#3d5a4a;
+    --tag-soft:#e3ede7;
+    --shadow: 0 1px 0 rgba(30,27,22,0.06);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg:#171410;
+      --paper:#1f1b15;
+      --ink:#ece6d9;
+      --ink-soft:#c3b9a5;
+      --rule:#413824;
+      --accent:#e0937a;
+      --accent-soft:#332420;
+      --tag:#9fc6ae;
+      --tag-soft:#20302a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#171410;
+    --paper:#1f1b15;
+    --ink:#ece6d9;
+    --ink-soft:#c3b9a5;
+    --rule:#413824;
+    --accent:#e0937a;
+    --accent-soft:#332420;
+    --tag:#9fc6ae;
+    --tag-soft:#20302a;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-padding-top: calc(env(safe-area-inset-top,0px) + 70px);}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .top-bar{
+    position:sticky;
+    top:0;
+    top: env(safe-area-inset-top,0px);
+    z-index:20;
+    background:var(--bg);
+    border-bottom:1px solid var(--rule);
+    padding: 14px clamp(16px,4vw,40px);
+    padding-top: calc(14px + env(safe-area-inset-top,0px));
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .top-bar .course{
+    font-family:'Source Serif 4', serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+  }
+  .top-bar .sub{
+    color:var(--ink-soft);
+    font-size:0.85rem;
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding: clamp(24px,5vw,56px) clamp(16px,4vw,40px) 80px;
+  }
+
+  .masthead{
+    margin-bottom:2.2rem;
+  }
+  .masthead .kicker{
+    color:var(--accent);
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing:0.06em;
+    margin-bottom:0.5rem;
+  }
+  h1{
+    font-family:'Source Serif 4', serif;
+    font-size:clamp(1.6rem,4.5vw,2.3rem);
+    line-height:1.15;
+    margin:0 0 0.6rem;
+    font-weight:700;
+  }
+  .masthead p{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    line-height:1.55;
+    max-width:64ch;
+    margin:0.4rem 0 0;
+  }
+
+  nav.toc{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:10px;
+    padding:1rem 1.2rem;
+    margin:1.8rem 0 2.6rem;
+    box-shadow:var(--shadow);
+  }
+  nav.toc .toc-title{
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink-soft);
+    margin-bottom:0.6rem;
+    font-weight:600;
+  }
+  nav.toc ol{
+    margin:0;
+    padding-left:1.1rem;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li{margin-bottom:0.35rem;}
+  nav.toc a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:0.92rem;
+    border-bottom:1px solid transparent;
+  }
+  nav.toc a:hover{border-bottom-color:var(--accent);}
+
+  section.topic{
+    margin-bottom:3rem;
+  }
+  section.topic h2{
+    font-family:'Source Serif 4', serif;
+    font-size:1.35rem;
+    font-weight:700;
+    display:flex;
+    align-items:baseline;
+    gap:0.6rem;
+    padding-bottom:0.5rem;
+    border-bottom:2px solid var(--ink);
+    margin:0 0 1.3rem;
+    scroll-margin-top: calc(90px + env(safe-area-inset-top,0px));
+  }
+  section.topic h2 .num{
+    font-size:0.95rem;
+    color:var(--accent);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+  }
+
+  .qa{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:10px;
+    padding:1.1rem 1.3rem 1.2rem;
+    margin-bottom:1rem;
+    box-shadow:var(--shadow);
+  }
+  .qa .q{
+    font-weight:600;
+    font-size:1.01rem;
+    line-height:1.45;
+    margin:0 0 0.55rem;
+    display:flex;
+    gap:0.55rem;
+  }
+  .qa .q .qmark{
+    color:var(--accent);
+    flex:0 0 auto;
+  }
+  .qa .a{
+    color:var(--ink-soft);
+    font-size:0.96rem;
+    line-height:1.62;
+    margin:0;
+  }
+  .qa .a strong{color:var(--ink);}
+  .qa ul, .qa ol{
+    margin:0.4rem 0 0.2rem;
+    padding-left:1.2rem;
+  }
+  .qa li{margin-bottom:0.35rem; line-height:1.55; color:var(--ink-soft);}
+  .qa li strong{color:var(--ink);}
+
+  .tagline{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--tag);
+    background:var(--tag-soft);
+    padding:0.15rem 0.55rem;
+    border-radius:999px;
+    margin-left:0.4rem;
+    vertical-align:middle;
+    white-space:nowrap;
+  }
+
+  table.dist{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:0.6rem;
+    font-size:0.92rem;
+  }
+  table.dist th, table.dist td{
+    text-align:left;
+    padding:0.5rem 0.6rem;
+    border-bottom:1px solid var(--rule);
+    color:var(--ink-soft);
+  }
+  table.dist th{
+    color:var(--ink);
+    font-weight:600;
+    border-bottom:2px solid var(--ink);
+  }
+
+  .formula{
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    padding:0.8rem 1rem;
+    border-radius:0 8px 8px 0;
+    font-family:'Source Serif 4', serif;
+    font-size:1.05rem;
+    margin:0.6rem 0;
+  }
+
+  .checklist{
+    background:var(--paper);
+    border:1px dashed var(--rule);
+    border-radius:10px;
+    padding:1.2rem 1.4rem;
+  }
+  .checklist h2{
+    font-family:'Source Serif 4', serif;
+    font-size:1.15rem;
+    margin:0 0 0.8rem;
+  }
+  .checklist label{
+    display:flex;
+    align-items:flex-start;
+    gap:0.6rem;
+    margin-bottom:0.6rem;
+    font-size:0.94rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+    cursor:pointer;
+  }
+  .checklist input{
+    margin-top:0.25rem;
+    accent-color:var(--accent);
+    flex:0 0 auto;
+  }
+  .checklist input:checked + span{
+    color:var(--ink-soft);
+    text-decoration:line-through;
+    opacity:0.6;
+  }
+
+  footer{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.78rem;
+    margin-top:3rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--rule);
+  }
+
+  @media (max-width:520px){
+    nav.toc ol{columns:1;}
+  }
+
+  @media print{
+    .top-bar{position:static;}
+    .qa{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="course">BUS-401 · Total Quality Management</span>
+  <span class="sub">Q&amp;A Bank — TQM Tools &amp; Techniques II</span>
+</div>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="kicker">Sumaiya Mam · Source: TQM Techniques-ii — SM_2026.pdf</div>
+    <h1>TQM Tools and Techniques II — Q&amp;A Bank</h1>
+    <p>Covers Quality Circle, Quality Function Deployment (QFD), Project Management Concept, Business Process Reengineering (BPR), and Taguchi's Approach to Quality. Question style is matched against the 2024 exam pattern — Question 7 in that paper drew directly on the Quality Circle and QFD sections below.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">Jump to a topic</div>
+    <ol>
+      <li><a href="#quality-circle">1. Quality Circle</a></li>
+      <li><a href="#qfd">2. Quality Function Deployment</a></li>
+      <li><a href="#pm">3. Project Management Concept</a></li>
+      <li><a href="#bpr">4. Business Process Reengineering</a></li>
+      <li><a href="#taguchi">5. Taguchi's Approach to Quality</a></li>
+    </ol>
+  </nav>
+
+  <section class="topic" id="quality-circle">
+    <h2><span class="num">01</span> Quality Circle</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q1.</span> Define Quality Circle. <span class="tagline">2+ definitions</span></p>
+      <p class="a">A Quality Circle is a small group of employees from the same work area, doing similar work, who voluntarily meet regularly (about an hour a week) to identify, analyze, and resolve work-related problems, improving total performance and enriching work life.</p>
+      <ul>
+        <li><strong>Udupa (1986):</strong> a small group of employees in the same work area who voluntarily meet regularly to identify, analyze and resolve work-related problems.</li>
+        <li><strong>Ishikawa:</strong> a small group that performs quality-control activities voluntarily within the same workshop, as part of company-wide QC activities, for self- and mutual development.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q2.</span> Write down the features of Quality Circle. <span class="tagline">exam favorite · 4–5 marks</span></p>
+      <ol>
+        <li><strong>Small group of employees</strong> — ideally 8 to 10 members (below 5 loses vitality due to absenteeism; above 15 denies active participation to everyone).</li>
+        <li><strong>Same work area / similar work</strong> — a homogeneous group, not inter-departmental, so discussions are intelligible to all members.</li>
+        <li><strong>Voluntary</strong> — no compulsion to join or not join; based on the principle of voluntarism.</li>
+        <li><strong>Meets regularly</strong> — about one hour every week (3–4 times a month), during or after working hours as members decide.</li>
+        <li><strong>Identifies, analyzes and resolves work-related problems</strong> — stays focused on quality, productivity and performance, not grievances or demands.</li>
+        <li><strong>Leads to total performance</strong> — improves quality, productivity, cost, safety, giving tangible and intangible gains.</li>
+        <li><strong>Enriches work life</strong> — better working environment, job satisfaction, cohesive team culture, improved relationships.</li>
+      </ol>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q3.</span> Why is 8–10 considered the ideal size for a Quality Circle?</p>
+      <p class="a">Fewer than 5 members causes the circle to lose vitality (high absenteeism can make it inactive); more than 15 members makes the number of interactions unmanageable and denies some members the opportunity for active participation.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q4.</span> What is the main focus of Quality Circle discussions, and what is explicitly excluded?</p>
+      <p class="a">The focus is strictly "work-related problems" — quality, productivity, cost, safety. Extraneous issues such as grievances or demands are excluded.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="qfd">
+    <h2><span class="num">02</span> Quality Function Deployment (QFD)</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q5.</span> What is Quality Function Deployment (QFD)? <span class="tagline">2024 exam · Q7b</span></p>
+      <p class="a">QFD is a structured approach to defining customer needs/requirements and translating them into specific plans to produce products that meet those needs. It is built around capturing the <strong>"voice of the customer"</strong> (stated and unstated needs) and converting it into product requirements.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q6.</span> How is the "voice of the customer" captured?</p>
+      <p class="a">Through direct discussion/interviews, surveys, focus groups, customer specifications, observation, warranty data, and field reports.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q7.</span> Discuss the main phases of QFD. <span class="tagline">2024 exam · Q7b · 5 marks</span></p>
+      <p class="a">QFD methodology runs through four basic phases across the product development process, each producing one or more matrices:</p>
+      <ol>
+        <li><strong>Product Planning</strong> — translates customer needs ("whats") into product requirements/technical characteristics ("hows"), summarized in the House of Quality matrix.</li>
+        <li><strong>Product Design</strong> — translates product requirements into specific part/component characteristics and design targets.</li>
+        <li><strong>Process Design</strong> (Process Planning) — translates design characteristics into key process operations and parameters needed to produce the product.</li>
+        <li><strong>Process Control / Quality Control</strong> — translates process operations into production requirements: quality control plans, testing, equipment maintenance, and operator training.</li>
+      </ol>
+      <p class="a">Overall flow: <strong>Product Planning → Product Design → Process Design → Process/Quality Control.</strong></p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q8.</span> What is House of Quality (HOQ)? Which components are essential to facilitate QFD? <span class="tagline">2024 exam · Q7c · 3 marks</span></p>
+      <p class="a">HOQ is the product-planning matrix used in the first phase of QFD to translate customer requirements ("whats") into technical/design requirements ("hows"). Essential components:</p>
+      <ul>
+        <li>Customer requirements (the "Whats")</li>
+        <li>Technical/design requirements (the "Hows")</li>
+        <li>Relationship matrix (linking whats to hows)</li>
+        <li>Planning matrix / importance weighting of customer needs</li>
+        <li>Technical correlation matrix (the "roof" — interrelationships among the hows)</li>
+        <li>Competitive assessment / benchmarking</li>
+        <li>Technical priorities and targets (bottom row)</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q9.</span> Why does QFD require multiple functional departments to be involved?</p>
+      <p class="a">Because product development involves Marketing, Design Engineering, Quality Assurance, Manufacturing/Manufacturing Engineering, Test Engineering, Finance, and Product Support — QFD is a team-based, cross-functional communication tool, not just a set of matrices.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q10.</span> What is the real value of QFD beyond the matrices themselves?</p>
+      <p class="a">The matrices are a communication tool, but the real value lies in the process of team communication and decision-making that QFD forces — leading to consensus, greater commitment, better coordination, and reduced downstream redesign time (more time spent up-front, less time spent fixing disagreements later).</p>
+    </div>
+  </section>
+
+  <section class="topic" id="pm">
+    <h2><span class="num">03</span> Project Management (PM) Concept</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q11.</span> Define "project" and "project management."</p>
+      <ul>
+        <li><strong>Project:</strong> a one-shot, time-limited, goal-directed major undertaking requiring varied skills and resources; a temporary endeavor with a defined start and end, undertaken to create a unique product or service.</li>
+        <li><strong>Project management:</strong> the overall planning and coordination of a project from conception to completion, aimed at meeting stated requirements and completing on time, within cost, and to required quality standards.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q12.</span> List the steps/stages in Project Management.</p>
+      <ol>
+        <li>Project Definition and Scope</li>
+        <li>Technical Design</li>
+        <li>Financing</li>
+        <li>Contracting</li>
+        <li>Implementation</li>
+        <li>Performance Monitoring</li>
+      </ol>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q13.</span> What are the four basic elements a Project Manager must manage simultaneously?</p>
+      <ol>
+        <li><strong>Resources</strong> — people (right skills, right quantity, right time), equipment, and materials.</li>
+        <li><strong>Time/Schedule</strong> — breaking the project into tasks, estimating duration, sequencing them.</li>
+        <li><strong>Cost</strong> — estimated cost, actual cost, and variability/contingency (weather, suppliers, design allowances).</li>
+        <li><strong>Scope</strong> — what the project is meant to deliver.</li>
+      </ol>
+      <p class="a">All four are interrelated and must be managed together for project success.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q14.</span> Explain the 80/20 Rule in project management.</p>
+      <p class="a">A small share (20%) of the work is vital while the rest (80%) is trivial. In practice, the first 10% and the last 10% of a project (20% of total work) consume 80% of the time and resources — so project managers should plan extra attention/buffer for the start and finish phases.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q15.</span> What are the elements of the Project Management Life Cycle?</p>
+      <ol>
+        <li>Need Identification</li>
+        <li>Initiation</li>
+        <li>Planning</li>
+        <li>Executing</li>
+        <li>Controlling</li>
+        <li>Closing out</li>
+      </ol>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q16.</span> Briefly describe each phase of the Project Management Life Cycle.</p>
+      <ul>
+        <li><strong>Need Identification:</strong> projects identified internally (energy manager spotting opportunities/audits) or externally (audits by outside auditors); ranked by cost-effectiveness, sustainability of savings, ease of monitoring, technology availability, and environmental/social benefits.</li>
+        <li><strong>Initiation:</strong> getting the project started; stakeholders agree on initiation; success depends on accurate information, management support, and authorization.</li>
+        <li><strong>Planning:</strong> the most important phase — defines activities, products, schedule, cost, risk, quality, and staffing; produces the approved project plan.</li>
+        <li><strong>Executing:</strong> the project plan is carried out; team focus shifts from planning to performing, observing and analyzing work; deliverables are produced.</li>
+        <li><strong>Controlling:</strong> comparing actual vs. planned performance and taking corrective action when there are significant differences.</li>
+        <li><strong>Closing out:</strong> performed once objectives are met and the customer accepts deliverables (or if cancelled/terminated early); includes contract closeout and administrative closure.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="topic" id="bpr">
+    <h2><span class="num">04</span> Business Process Reengineering (BPR)</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q17.</span> Define BPR.</p>
+      <p class="a">BPR (Hammer &amp; Champy / Sherwood-Smith) is the fundamental rethinking and radical redesign of business processes to achieve dramatic improvements in critical, contemporary measures of performance such as cost, quality, service, and speed — devising new ways of organizing tasks and people and redesigning IT systems so processes support organizational goals.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q18.</span> Define "business process" as used in BPR.</p>
+      <p class="a">Hammer &amp; Champy: a collection of activities that takes one or more kinds of input and creates an output of value to the customer — a specific ordering of work activities across time and space, with a beginning, an end, and clearly identified inputs/outputs.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q19.</span> Distinguish between BPR and TQM. <span class="tagline">high exam-relevance</span></p>
+      <table class="dist">
+        <thead>
+          <tr><th>Aspect</th><th>BPR</th><th>TQM</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nature of change</td><td>Major, discrete, radical change</td><td>Minor, continuous / incremental improvement</td></tr>
+          <tr><td>Time to results</td><td>Faster — realized in 12–18 months</td><td>Slower — can take several years</td></tr>
+          <tr><td>Risk</td><td>Far riskier undertaking</td><td>Lower risk, steady gains</td></tr>
+          <tr><td>Direction</td><td>Top-down (driven by management)</td><td>Bottom-up (involves staff at all levels)</td></tr>
+          <tr><td>Approach</td><td>Complete redesign of processes</td><td>Ongoing improvement of existing processes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q20.</span> Distinguish between BPR and DSS (Decision Support Systems).</p>
+      <p class="a">Both focus on business processes and improving them through change, but BPR focuses on the <strong>whole organization</strong>, while DSS focuses on <strong>one individual decision</strong> at a time.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q21.</span> How are BPR and TQM related in practice?</p>
+      <p class="a">Companies that implemented TQM before undertaking BPR faced less resistance to change (MacIntosh &amp; Francis, 1997). This has led to the concept of "participative BPR," combining BPR's radical redesign with TQM's staff involvement to reduce resistance.</p>
+    </div>
+  </section>
+
+  <section class="topic" id="taguchi">
+    <h2><span class="num">05</span> Taguchi's Approach to Quality</h2>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q22.</span> Define quality according to Taguchi.</p>
+      <p class="a">Taguchi defines quality negatively: <strong>"Quality is the loss imparted to society from the time the product is shipped"</strong> (i.e., the amount of damage/loss incurred to society from the moment the product leaves the factory). "Society" includes both the customer and the company's own employees.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q23.</span> What is Taguchi's main objective for any quality improvement programme?</p>
+      <p class="a">To minimize the variation of product performance about its target value — a product causes loss not only when it falls outside specification limits but whenever it deviates at all from the target value. Smaller performance variation means better quality.</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q24.</span> Distinguish between the traditional (conventional) loss function and Taguchi's loss function.</p>
+      <ul>
+        <li><strong>Traditional view:</strong> all products within specification limits are considered equally good; all products outside are equally bad (a step-function view).</li>
+        <li><strong>Taguchi's view:</strong> loss increases as performance deviates from the target value, even within specification limits — modeled as a continuous quadratic (parabolic) function, not a step function.</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q25.</span> Write Taguchi's Loss Function and define its terms.</p>
+      <div class="formula">L(Y) = (M / D&sup2;) &times; (Y &minus; t)&sup2;</div>
+      <ul>
+        <li><strong>L(Y)</strong> = quality loss function</li>
+        <li><strong>t</strong> = target value (most desirable value of the product)</li>
+        <li><strong>Y</strong> = actual performance/response observed in test or analysis</li>
+        <li><strong>M</strong> = producer's loss (in monetary terms)</li>
+        <li><strong>D</strong> = customer's tolerance</li>
+      </ul>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q26.</span> What do "t + D" and "t &minus; D" represent in Taguchi's loss function graph?</p>
+      <p class="a">They are the functional limits beyond which 50% of the product/system needs customer maintenance (i.e., the tolerance boundaries around the target value).</p>
+    </div>
+
+    <div class="qa">
+      <p class="q"><span class="qmark">Q27.</span> Why is Taguchi's approach significant for quality improvement programmes?</p>
+      <p class="a">It provides a straightforward, well-integrated system for applying statistical experimental design, encourages closer collaboration between statisticians and engineers, increases statistical awareness in industry, and allows quality to be built in early — at the design/prototype stage, during maintenance, or during process installation — rather than inspected in afterward.</p>
+    </div>
+  </section>
+
+  <div class="checklist" id="checklist">
+    <h2>Quick Revision Checklist</h2>
+    <label><input type="checkbox"><span>Quality Circle: definition (2+ authors) + all 7 features</span></label>
+    <label><input type="checkbox"><span>QFD: definition, voice of customer, 4 phases, HOQ components</span></label>
+    <label><input type="checkbox"><span>PM: definition, 6 steps, 4 elements, 80/20 rule, 6-stage life cycle</span></label>
+    <label><input type="checkbox"><span>BPR: definition, business process definition, BPR vs TQM table, BPR vs DSS</span></label>
+    <label><input type="checkbox"><span>Taguchi: definition of quality, loss function formula + terms, traditional vs Taguchi loss</span></label>
+  </div>
+
+  <footer>BUS-401 · Total Quality Management for Leather and Leather Products — revision material compiled from Sumaiya Mam's slides.</footer>
+</div>
+
+</body>
+</html>
